@@ -26,13 +26,13 @@
                 <p class="h4 align-self-center px-3 m-0">Jarditou.com</p>
                 
                 <!--Menu responsive-->
-                <div class="d-sm-flex d-lg-none">
-                    <button class="btn" type="button" data-toggle="collapse" data-target="#test" aria-expanded="false" aria-controls="test">
+                <div class="d-sm-flex d-lg-none pos-f-t">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#test" aria-expanded="false" aria-controls="test">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
                 <div class="collapse" id="test">
-                    <div class="card" style="width: auto;">
+                    <div class="card">
                         <div class="card-body">
                             <p class="card-text">test</p>
                         </div>
@@ -59,7 +59,7 @@
         </section>
 
         <section class="row justify-content-center mt-3">
-            <article class="col-8 shadow py-2">
+            <article class="col-11 col-lg-8 shadow py-2">
                 <fieldset id="formulaire">
                     <form action="http://bienvu.net/script.php" method="post">
                         <div class="form-group">
@@ -125,7 +125,12 @@
 
 
         <footer class="navbar navbar-expand-sm bg-dark rounded-top mt-3">
-            <ul class="navbar-nav list-unstyled m-0 px-2" id="menu_bas">
+            <div class="d-sm-flex d-lg-none pos-f-t">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#test" aria-expanded="false" aria-controls="test">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <ul class="d-none d-lg-flex navbar-nav list-unstyled m-0 px-2" id="menu_bas">
                 <li class="nav-item"> <a class="nav-link text-light" href="mention_legales.html">Mention légales</a> </li>
                 <li class="nav-item"> <a class="nav-link text-light" href="horaire.html">Horaire</a> </li>
                 <li class="nav-item"> <a class="nav-link text-light" href="plan_du_site.html">Plan du site</a> </li>
