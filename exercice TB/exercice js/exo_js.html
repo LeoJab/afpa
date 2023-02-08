@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Nombre magique</title>
+  </head>
+
+  <!-- ----------------------------------------- -->
+
+  <body>
+    <div id="label1">Entrez votre proposition</div>
+    <input type="number" id="textBox1" value="getRandomInt">
+    <input type="button" id="button1" value="Verifier" onclick="verif();">
+    <div>
+
+      <br>
+      <hr>
+
+      <!-- ----------------------------------------- -->
+
+      <input type="button" id="button2" value="S'enregistrer" onclick="enregistrer()">
+    </div>
+
+    <br>
+    <hr>
+
+    <!-- ----------------------------------------- -->
+
+    <div id="label2">Entrez le nombre d'utilisateur</div>
+    <input type="text" id="textBox2" value="">
+    <input type="button" id="button2" value="Valider" onclick="verification()">
+    <p id="reponse"> </p>
+
+    <br>
+    <hr>
+
+    <!-- ----------------------------------------- -->
+
+    <div>
+    <label id="label3">Entrez votre date de naissance</label>
+    <input type="text" id="ddn">
+    <input type="button" id="button3" value="Calcul" onclick="CalculAge()">
+    <div id="age"></div>
+    </div>
+
+    <br>
+    <hr>
+
+    <!-- ----------------------------------------- -->
+
+    <div>
+    <label id="label4">Entrez deux nombres entiers:</label>
+    <input type="number" id="nombre1"> <input type="number" id="nombre2">
+    <input type="button" name="plus" id="plus" value="+" onclick="CalculPlus()">
+    <input type="button" name="moins" id="moins" value="-" onclick="CalculMoins()">
+    <input type="button" name="multiplier" id="multi" value="x" onclick="CalculMulti()">
+    <input type="button" name="diviser" id="divi" value="/" onclick="CalculDivi()">
+    <label>Résultat: </label><input type="text" name="resultat" id="resultat">
+    </div>
+
+    <br>
+    <hr>
+
+    <!-- ----------------------------------------- -->
+
+    <div id="calculatrice">
+    <label id="label4">Entrez deux nombres entiers:</label>
+    
+    <input type="number" id="n1"> 
+    <input type="number" id="n2">
+    
+    <select name="op" id="op">
+      <option value="+" selected>+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select>
+
+    <input type="button" name="calcul" id="calcul" value="Calcul" onclick="calcul()">
+    
+    <label id="label5">Résultat:</label><input type="text" id="resu">
+    </div>
+
+    <br>
+    <hr>
+
+   <!-- ---------------- JS-08 EX-1 ----------------------- -->
+
+    <div>
+      <input type="button" id="b" value="Saisir" onclick="saisir()">
+    </div> <br>
+    <div id="prm"></div>
+
+    <br>
+    <hr>
+
+    <!-- ---------------- JS-08 EX-2 ----------------------- -->
+
+    <div>
+      <label for="n_08_2">Entrez un nombre entier : </label><input type="number" id="n_08_2">
+      <input type="button" id="b_08_2" value="Voir les nombres entiers inférieurs" onclick="js1_08_2()"> <br>
+      <p id="r1_08_2"></p><p id="r2_08_2"></p>
+    </div>
+
+    <br>
+    <hr>
+
+    <!-- ---------------- JS-08 EX-3 ----------------------- -->
+
+    <div>
+      <input type="button" id="b1_08_3" value="Cliquez pour entrer les nombres entiers" onclick="js1_08_3()">
+      <p id="r1_08_3"></p> <br>
+      <p id="r2_08_3"></p>
+    </div>
+
+    <br>
+    <hr>
+
+    <!-- ---------------- JS-08 EX-4 ----------------------- -->
+
+    <div>
+      <input type="number" id="n1_08_4">
+      <label>x</label>
+      <input type="number" id="n2_08_4">
+      <input type="button" id="b1_08_4" value="Resultat" onclick="js1_08_4()"> <br>
+      <p id="r1_08_4"></p>
+    </div>
+
+    <br>
+    <hr>
+
+    <!-- ---------------- JS-08 EX-5 ----------------------- -->
+
+    <label>Entrez un mot</label>
+    <input type="text" id="r1_08_5">
+    <input type="button" id="b1_08_5" value="Entrez" onclick="js1_08_5()">
+    <p id="r2_08_5"></p>
+
+    <br>
+    <hr>
+    
+    <!-- ---------------- JS-09 EX-1 ----------------------- -->
+
+    <div>
+      <input type="button" id="b1_09_1" value="Bouton" onclick="js1_09_1()"> <br>
+      <p id="r1_09_1"></p>
+      <p id="r2_09_1"></p>
+    </div>
+
+    <br>
+    <hr>
+
+    <!-- ---------------- JS-10 EX-1 ----------------------- -->
+
+    <div>
+      <label>Entrez la taille de votre tableau: </label>
+      <input type="number" id="t1_10_1">
+      <input type="button" id="b1_10_1" value="Entrez" onclick="js1_10_1()">
+    </div>
+
+    <br>
+    <hr>
+
+        <!-- ----------------  ----------------------- -->
+
+    <div>
+      <input type="button" value="Clique" onclick="js_11_1()">
+      <p id="oui"></p>
+    </div>
+
+    <script src="/exercice js/exercice1.js"></script>
+  </body>
+</html>
