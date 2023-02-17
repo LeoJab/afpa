@@ -103,6 +103,7 @@ GROUP BY hot_sta_id
 
 
 ------------------------------- PAPYRUS -------------------------------
+------------------------ Extraction de Données ------------------------
 
 select numcom AS 'Numero de Commande', numfou AS 'Numero de Fournisseur'
 from fournis
@@ -215,3 +216,37 @@ from vente
 natural join ligcom
 natural join fournis
 where derliv between 20180101 and 20181231
+
+
+
+
+
+------------------------------- PAPYRUS -------------------------------
+---------------------- Mettre à jour des données ----------------------
+
+update vente
+set prix1 = prix1 * 1.04, prix2 = prix2 * 1.02
+where numfou = 9180
+
+update vente
+set prix2 = prix1
+where prix2 = 0
+--where prix2 is null
+
+update entcom
+natural join fournis
+set obscom = '*****'
+where satisf < 5
+
+-- 4 -----------
+
+delete from ligcom
+where codart = 'I110'
+
+delete from vente
+where codart = 'I110'
+
+delete from produit
+where codart = 'I110'
+
+----------------
