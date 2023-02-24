@@ -13,7 +13,7 @@ where companyname like 'Exotic Liquids'
 select CompanyName AS 'Fournisseur', count(ProductId) AS 'Nbre produits'
 from products
 natural join suppliers
-where country like 'France'
+where country = 'France'
 group by companyname
 order by count(ProductId) DESC
 
@@ -21,19 +21,19 @@ order by count(ProductId) DESC
 select CompanyName AS 'Client', count(orderID) AS 'Nbre commandes'
 from customers
 natural join orders
-where country like 'France'
+where country = 'France'
 group by companyname
 having count(orderID) > 10
 order by count(orderID)
 
 -- 5.
-select CompanyName AS 'Client', SUM(unitprice * Quantity) AS 'CA', country AS 'Pays'
+select CompanyName AS 'Client', SUM(unitprice * Quantity) AS CA, country AS 'Pays'
 from orders
 natural join orderdetails
 natural join customers
 group by customerID
-having SUM(unitprice * Quantity) > 30000
-order by SUM(unitprice * Quantity) DESC
+having CA > 30000
+order by CA DESC
 
 -- 6.
 select shipcountry AS 'Pays'
@@ -49,14 +49,14 @@ select SUM(Quantity * unitprice) AS 'Montant Ventes 97'
 from orders
 natural join orderdetails
 where OrderDate between '19970101' and '19971231'
-group by EXTRACT(year from OrderDate)
+group by year(OrderDate)
 
 -- 8.
-select EXTRACT(month from OrderDate) AS 'Mois 91', SUM(Quantity * unitprice) AS 'Montant Ventes'
+select month(OrderDate) AS 'Mois 91', SUM(Quantity * unitprice) AS 'Montant Ventes'
 from orders
 natural join orderdetails
 where OrderDate between '19970101' and '19971231'
-group by EXTRACT(month from OrderDate)
+group by month(OrderDate)
 
 -- 9.
 select OrderDate AS 'Date de dernière commande'

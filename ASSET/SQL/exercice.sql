@@ -105,47 +105,66 @@ GROUP BY hot_sta_id
 ------------------------------- PAPYRUS -------------------------------
 ------------------------ Extraction de Données ------------------------
 
+-- 1
 select numcom AS 'Numero de Commande', numfou AS 'Numero de Fournisseur'
 from fournis
 natural join entcom
 where numfou = 9120
 
+-- 2
 select numfou AS 'Numero de Fournisseur'
-from vente
+from entcom
 
-select numfou AS 'Numero de Fournisseur', COUNT(codart) AS 'Nombre de Commande'
-from vente
-group by numfou
+-- 3
+select COUNT(numcom) AS 'Nombre de Commande', COUNT(DISTINCT numfou) AS 'Numero de Fournisseur'
+from entcom
 
+-- 4
 select *
 from produit
 where stkphy <= stkale and qteann < 1000
 
+-- 5
 select numfou AS 'Numero de Fournisseur', nomfou AS 'Nom du Fournisseur', posfou AS 'CP du Fournisseur'
 from fournis
 where (posfou between 75000 and 75999) or (posfou between 78000 and 78999) or (posfou between 92000 and 92999) or (posfou between 77000 and 77999)
 order by posfou
 
+-- 6
 select numcom AS 'Numero de Commande', derliv
 from ligcom
 where (derliv between 20180401 and 20180430) or (derliv between 20190401 and 20190430) or (derliv between 20200401 and 20200430) or (derliv between 20210401 and 20210430) or (derliv between 20220401 and 20220430)
 or (derliv between 20180301 and 20180330) or (derliv between 20190301 and 20190330) or (derliv between 20200301 and 20200330) or (derliv between 20210301 and 20210330) or (derliv between 20220301 and 20220330)
 
+-- 7
+SELECT numcom, obscom, datcom
+FROM entcom
+WHERE (obscom like "commande urgente" OR obscom LIKE "commande cadencee")
+
+-- 8
+select numcom, qteliv * priuni AS Total
+from ligcom
+GROUP BY numcom
+ORDER BY Total DESC
+
+-- 9
 select numcom AS 'Numero de Commande', priuni * qtecde AS 'Prix Total'
 from ligcom
 where priuni * qtecde > 10000
 group by priuni * qtecde
 
+-- 10
 select numfou AS 'Numero de Fournisseur', numcom AS 'Numero de Commande', derliv
 from ligcom
 natural join entcom
 natural join fournis
 
+-- 11
 select numcom AS 'Numero de Commande', numfou AS 'Numero de Fournisseur', libart AS 'Produit', priuni * qtecde AS 'Prix Total'
 from entcom 
+natural join produit
 natural join ligcom
 natural join fournis
-natural join produit
 where obscom like 'Commande urgente'
 
 -- 12 ----------
@@ -178,11 +197,13 @@ where numcom = 70210
 
 ----------------
 
+-- 14
 select libart AS 'Produit', prix1 AS 'Prix'
 from vente 
 natural join produit 
 where prix1 < 120
 
+-- 15
 select libart AS 'Produit', nomfou AS 'Nom du Fournisseur'
 from produit
 natural join ligcom
@@ -191,6 +212,7 @@ natural join fournis
 where stkphy <= ((150 * stkale) / 100)
 order by produit ASC, nomfou ASC
 
+-- 16
 select libart AS 'Produit', nomfou AS 'Nom du Fournisseur'
 from produit
 natural join ligcom
@@ -200,6 +222,7 @@ natural join vente
 where stkphy <= ((150 * stkale) / 100) and delliv < 30
 order by produit ASC, nomfou ASC
 
+-- 17
 select nomfou AS 'Nom du Fournisseur', stkphy AS 'Stock Physique'
 from produit
 natural join vente
@@ -207,10 +230,12 @@ natural join fournis
 group by nomfou
 order by stkphy DESC
 
+-- 18
 select libart AS 'Produit', stkphy AS 'Stock Physique', qteann AS 'Quantité Annuelle'
 from produit
 where stkphy < ((10 * qteann) / 100)
 
+-- 19
 select nomfou AS 'Nom du Fournisseur', (priuni * qteliv - ((20 * (priuni * qteliv)) / 100)) AS "Chiffre d'Affaire"
 from vente
 natural join ligcom
