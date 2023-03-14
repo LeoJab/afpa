@@ -48,7 +48,7 @@
         <section class="row justify-content-center mt-3 m-0">
             <article class="col-11 col-lg-8 shadow py-2">
                 <fieldset id="formulaire">
-                    <form action="http://bienvu.net/script.php" method="post">
+                    <form action="../php/form.php" method="post">
                         <div class="form-group">
                             <p class="text-muted">* Ces zones sont obligatoires</p>
                             <fieldset class="coordonnees">
@@ -85,12 +85,12 @@
                                 <div class="form-group">
                                     <legend class="demande">Votre demande</legend>
                                     <label for="choix">Sujet* :</label>
-                                    <select class="form-control" id="choix">
+                                    <select class="form-control" id="choix" name="choix">
                                         <option id="choix_base" value="Veuillez_séléctionner_un_sujet" hidden selected>Veuillez séléctionner un sujet</option>
-                                        <option id="choix1" value="Mes_commandes">Mes commandes</option>
-                                        <option id="choix2" value="Question_sur_un_produit">Question sur un produit</option>
-                                        <option id="choix3" value="Réclamation">Réclamation</option>
-                                        <option id="choix4" value="Autres">Autres</option>
+                                        <option id="choix1" name="choix" value="Mes_commandes">Mes commandes</option>
+                                        <option id="choix2" name="choix" value="Question_sur_un_produit">Question sur un produit</option>
+                                        <option id="choix3" name="choix" value="Réclamation">Réclamation</option>
+                                        <option id="choix4" name="choix" value="Autres">Autres</option>
                                     </select>
                                 </div>
                                 <p id="er_sujet" class="error"></p>
@@ -102,7 +102,7 @@
                             </fieldset>
                             <br><label for="confirmation_formulaire"><input type="checkbox" name="confirmation_formulaire" id="confirmation_formulaire" required> J'accepte le traitement informatique de ce formulaire*</label>
                             <p id="er_confirm" class="error"></p>
-                            <br><button class="btn btn-dark" type="submit" id="submit" onclick="js_submit_contact()">Envoyer</button>
+                            <br><button class="btn btn-dark" type="submit" id="submit">Envoyer</button>
                             <button class="btn btn-dark" type="reset">Annuler</button>
                         </div>
                     </form>    
@@ -125,7 +125,7 @@
         </footer>
 
     </div>
-    <script src="/ASSET/JS/js_contact.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <!-- <script src="/ASSET/JS/js_contact.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script> -->
 </body>
 </html>

@@ -98,6 +98,12 @@ inner join hotel on hot_sta_id = sta_id
 WHERE res_cha_id = cha_id AND cha_hot_id = hot_id  
 GROUP BY hot_sta_id
 
+SELECT sta_nom, avg(DATEDIFF(res_date_fin, res_date_debut)) AS 'Durée Moyenne de Reservation'
+FROM reservation
+inner join chambre on res_cha_id = cha_id  
+inner join hotel on cha_hot_id = hot_id 
+inner join station on hot_sta_id = sta_id
+GROUP BY hot_sta_id
 
 
 

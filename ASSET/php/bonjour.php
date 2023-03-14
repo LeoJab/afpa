@@ -4,6 +4,7 @@
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
             <title>Document</title>
         </head>
         <body>
@@ -261,7 +262,7 @@
             $diff = $d_fin->diff($d_aujd)->format("%a");
             echo $diff;
 
-            echo "<p>2. Comment déterminer si une année est bissextile ?</p>";
+            echo "<p>3. Comment déterminer si une année est bissextile ?</p>";
             function annee_bissextile($annee) {
                 $a = $annee / 4;
                 if(is_int($a)) {
@@ -272,15 +273,72 @@
             }
             annee_bissextile(2024);
 
-            echo "<p>2. Montrez que la date du 32/17/2019 est erronée</p>";
-            function verif_date($date, $format = 'd/m/Y') {
-                if(checkdate($date, $format) == true) {
-                    echo $date ." est valide";
-                } else {
-                    echo $date ." n'est pas valide";
-                }
+            echo "<p>4. Montrez que la date du 32/17/2019 est erronée</p>";
+            function verif_date($date) {
+                $tab = explode("/", $date);
+                if(checkdate($tab[1], $tab[0], $tab[2]))
+                    echo $date . " est valide";
+                else 
+                    echo $date . " n'est pas valide";
+                
             }
-            verif_date(6/6/2019);
+            verif_date('29/02/2024');
+
+            echo "<p>5. Affichez l'heure courante sous cette forme : 11h25.</p>";
+            $h = date('h');
+            $m = date('i');
+            echo $h. 'h' . $m;
+
+            echo "<p>6. Ajoutez 1 mois à la date courante.</p>";
+            $date = new datetime("now");
+            date_modify($date, '+1 month');
+            echo date_format($date, 'd/m/Y');
+
+            echo "<p>7. Que s'est-il passé le <strong>1000200000</strong> ?</p>";
+            echo "Le ". date('d F Y', 1000200000) . ", deux avions de ligne détournés par des pirates de l'air détruisent les tours jumelles du World Trade Center situées dans le quartier de Manhattan à New York";
+
+            //---------------------------------
+
+            echo "<h1>Les formulaires et les variables serveur</h1>";
+            echo "<a href=../HTML/contact.html>jarditou</a>";
+
+            //---------------------------------
+
+            echo "<h1>La manipulation de fichiers</h1>";
+            echo '<p>1. 1.Écrire un programme qui lit ce fichier et qui construit une page web contenant une liste de liens hypertextes.</p>';
+            echo '<ul>';
+            $liens = file('essai.txt');
+            foreach($liens as $numero => $lien) {
+                echo '<li> <a href=' . $lien . '>' . $lien . '</a> <br> </li>';
+            }
+            echo '</ul>';
+            
+            echo '<p>2. 1.Écrire un programme qui lit ce fichier et qui construit une page web contenant une liste de liens hypertextes.</p>';
+            echo "<div class='row table-resonsive justify-content-center'>";
+                echo "<div class='col-8'>";
+                    echo '<table class="table rounded blocknote table-bordered table-striped-warning table-hover">';
+                    $customers = file('customers.csv');
+                        foreach($customers as $customer) {
+                            echo '<tr>';
+                            $customer = preg_split("/,/", $customer);                    
+                            for($a = 0; $a < count($customer); $a++) {
+                                echo '<td>' . $customer[$a] .'</td>';
+                            }
+                            echo '</tr>';
+                        }
+                    echo "</table>";
+                echo "</div>";
+            echo "</div>";
+
+            //---------------------------------
+
+            echo "<h1>Le téléchargement de fichiers</h1>";
+            echo "<p>1. Exercice : créer un formulaire d'upload et le fichier PHP de traitement correspondant, dans le fichier PHP écrivez juste var_dump(); et observez le résultat.</p>";
+
+            echo '<form action="form.php" method="post" enctype="multipart/form-data">';
+                echo '<input type="file" name="fichier">';
+                echo '<button class="btn btn-dark" type="submit" id="submit">Envoyer</button>';
+            echo '</form>';
             ?>
         </body>
     </html>
