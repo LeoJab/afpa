@@ -1,5 +1,4 @@
 ﻿<?php
-var_dump($_POST);
     // Récupération du title :
     if (isset($_POST['title']) && $_POST['title'] != "") {
         $title = $_POST['title'];
@@ -42,6 +41,7 @@ var_dump($_POST);
     else {
         $price = Null;
     }
+
     var_dump($_FILES);
     if ($_FILES["disc_picture"]["error"] > 0) {
         echo "Erreur !";
@@ -55,13 +55,15 @@ var_dump($_POST);
             finfo_close($finfo);
 
             if (in_array($mimetype, $aMimeTypes)){
-                move_uploaded_file($_FILES["disc_picture"]["tmp_name"], "jaquettes/".$_FILES["disc_picture"]["name"]); 
+                move_uploaded_file($_FILES["disc_picture"]["tmp_name"], "../jaquettes/".$_FILES["disc_picture"]["name"]); 
             }   else {
                 // Le type n'est pas autorisé, donc ERREUR
                 echo "Type de fichier non autorisé";    
                 exit;
         }  
     }
+    
+    $picture = $_FILES["disc_picture"]["name"];
 
 
     if ($title == Null || $artist == Null || $year == Null || $genre == null || $label == Null || $price == Null) {
@@ -69,7 +71,7 @@ var_dump($_POST);
         exit;
     }
 
-    require "db.php"; 
+    require "../db.php"; 
     $db = connexionBase();
 
 
@@ -96,7 +98,7 @@ var_dump($_POST);
         die("Fin du script (script_disc_ajout.php)");
     }
 
-    header("Location: index.php");
+    header("Location: ../index.php");
 
     exit;
 ?>

@@ -1,7 +1,7 @@
 ﻿<?php
 
     // On se connecte à la BDD via notre fichier db.php :
-    require "db.php";
+    require "../db.php";
     $db = connexionBase();
 
     // On récupère l'ID passé en paramètre :
@@ -26,7 +26,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-        <link href="style.css" rel="stylesheet">
+        <link href="../style.css" rel="stylesheet">
         <title>PDO - Détail</title>
     </head>
     
@@ -38,29 +38,39 @@
                 <label class="form-label" for="title">Title</label>
                 <input class="form-control" type="text" name="title" value="<?php echo $DiscDetails->disc_title ?>" disabled="disabled">
 
-                <label class="form-label" for="artist_id">Year</label>
-                <input class="form-control" type="text" name="title" value="<?php echo $DiscDetails->disc_year ?>" disabled="disabled">
+                <label class="form-label" for="year">Year</label>
+                <input class="form-control" type="text" name="year" value="<?php echo $DiscDetails->disc_year ?>" disabled="disabled">
 
                 <label class="form-label" for="year">Label</label>
-                <input class="form-control" type="text" name="title" value="<?php echo $DiscDetails->disc_label ?>" disabled="disabled">
+                <input class="form-control" type="text" name="label" value="<?php echo $DiscDetails->disc_label ?>" disabled="disabled">
             </div>
             <div class="col-5">
                 <label class="form-label" for="genre">Artist</label>
-                <input class="form-control" type="text" name="title" value="<?php echo $DiscDetails->artist_name ?>" disabled="disabled">
+                <input class="form-control" type="text" name="artist" value="<?php echo $DiscDetails->artist_name ?>" disabled="disabled">
 
                 <label class="form-label" for="label">Genre</label>
-                <input class="form-control" type="text" name="title" value="<?php echo $DiscDetails->disc_genre ?>" disabled="disabled">
+                <input class="form-control" type="text" name="genre" value="<?php echo $DiscDetails->disc_genre ?>" disabled="disabled">
 
                 <label class="form-label" for="price">Price</label>
-                <input class="form-control" type="text" name="title" value="<?php echo $DiscDetails->disc_price ?>" disabled="disabled">
+                <input class="form-control" type="text" name="price" value="<?php echo $DiscDetails->disc_price ?>" disabled="disabled">
             </div>
         </div>
-        <img class="img-responsive jaquette_details mt-3" src="/jaquettes/<?= $DiscDetails->disc_picture ?>">
+        <img class="img-responsive jaquette_details mt-3" src="../jaquettes/<?= $DiscDetails->disc_picture ?>">
 
         <div class="align-content-end mt-2">
             <a class="btn btn-primary" href="disc_form.php?id=<?= $DiscDetails->disc_id ?>">Modifier</a> 
-            <a class="btn btn-primary" href="">Supprimer</a>
-            <a class="btn btn-primary" href="index.php">Retour</a>
+            
+            <script> function confirmation() { 
+                var c = confirm("Êtes-vous sûr de supprimer <?php echo $DiscDetails->disc_title ?> de <?php echo $DiscDetails->artist_name ?> ?") 
+                if(c == false){
+                    return false;
+                    location.href = "disc_form.php?id=<?= $DiscDetails->disc_id ?>";
+                }
+            }
+            </script>
+
+            <a class="btn btn-primary" href="script_disc_delete.php?id=<?= $DiscDetails->disc_id ?>" onclick="confirmation()">Supprimer</a>
+            <a class="btn btn-primary" href="../index.php">Retour</a>
         </div>
     </body>
 

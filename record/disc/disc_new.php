@@ -1,5 +1,5 @@
 ﻿<?php
-include "db.php";
+include "../db.php";
 
 $db = connexionBase();
 
@@ -19,7 +19,7 @@ $requete->closeCursor();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link href="style.css" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet">
     <title>PDO - Ajout</title>
 </head>
 <body>
@@ -52,12 +52,12 @@ $requete->closeCursor();
             <input class="form-control" type="text" name="price" id="price">
 
             <label class="form-label" for="disc_picture">Picture</label>
-            <input class="form-control" type="file" name="disc_picture" id="disc_picture">
+            <input class="form-control" type="file" name="disc_picture">
 
             <br>
 
             <input class="btn btn-primary" type="submit" value="Ajouter">
-            <a class="btn btn-primary" href="index.php">Retour</a>
+            <a class="btn btn-primary" href="../index.php">Retour</a>
 
         </form>
     </div>
