@@ -8,6 +8,29 @@
     align-items: center;
 }
 
+.background_footer {
+    background: linear-gradient(225deg, #eff0f3, #ebebeb);
+    display: flex;
+    align-items: center;
+}
+
+.background_new {
+    background: linear-gradient(315deg, #eff0f3, #ebebeb);
+    margin-left: 5%;
+    padding-bottom: 4px;
+}
+
+.background_detail {
+    background: linear-gradient(315deg, #eff0f3, #ebebeb);
+}
+
+.background_form {
+    background: linear-gradient(315deg, #eff0f3, #ebebeb);
+    margin-left: 5%;
+    padding-left: 10px;
+    padding-bottom: 4px;
+}
+
 #titre {
     margin-left: 1em;
     color: black !important;
@@ -21,12 +44,21 @@ ul {
 
 a {
     text-decoration: none;
-    color: white;
+    color: #ebebeb;
 }
 
 a:hover {
     text-decoration: none;
-    color: #ebebeb;
+    color: white;
+}
+
+label {
+    margin-top: 4px;
+}
+
+footer {
+    display: block;
+
 }
 
 .nav_item_header {
@@ -38,7 +70,7 @@ a:hover {
     margin-right: 20px;
     padding: 10px;
     border-radius: 5px;
-    transition: 0.25s;
+    border: 0px solid white;
 }
 
 .nav_item_header:hover {
@@ -46,6 +78,7 @@ a:hover {
     font-size: 27px;
     border-radius: 5px;
     box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.048);
+    border: 2px solid white;
 }
 
 .vinyle {
@@ -58,13 +91,14 @@ a:hover {
     transition: 0.25s;
 }
 
-.detail{
+.bouton{
     background-color: #ff8e3c !important;
     border: #ff8e3c !important;
-    transition: 0.25s;
+    color: white;
+    transition:  0.25s;
 }
 
-.detail:hover {
+.bouton:hover {
     box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.048);
     color: #ebebeb;
     transition: 0.25s;
@@ -75,24 +109,19 @@ a:hover {
     align-content: center;
     background-color: #ff8e3c;
     font-size: 15px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
     padding: 10px;
     border-radius: 5px;
-    transition: 0.25s;
+    border: 0px solid white;
 }
 
 .nav_item_footer:hover {
     transition: 0.25s;
-    font-size: 17px;
+    font-size: 16px;
     border-radius: 5px;
     box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.048);
-}
-
-.background_footer {
-    background: linear-gradient(225deg, #eff0f3, #ebebeb);
-    display: flex;
-    align-items: center;
+    border: 2px solid white;
 }
 
 .jaquette_index {
@@ -100,5 +129,5 @@ a:hover {
 }
 
 .jaquette_details {
-    height: 500px;
+    height: 400px;
 }

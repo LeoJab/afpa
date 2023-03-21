@@ -3,8 +3,8 @@
     if (!(isset($_GET['id'])) || intval($_GET['id']) <= 0) GOTO TrtRedirection;
 
     // Si la vérification est ok :
-    require "../db.php"; 
-    $db = connexionBase();
+    require "db.php"; 
+    $db = ConnexionBase();
 
     try {
         // Construction de la requête DELETE sans injection SQL :
@@ -19,6 +19,6 @@
     }
 
     TrtRedirection:
-    header("Location: ../index.php");
+    header("Location: index.php?page=disc");
     exit;
 ?>

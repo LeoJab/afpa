@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
         <link href="style.css" rel="stylesheet">
-        <title>PDO - Liste</title>
+        <title>Vinyle.com</title>
     </head>
 
     <header class="background_header">
@@ -15,7 +15,7 @@
         <nav>
             <ul>
                 <li class="nav_item nav_item_header"> <a href="index.php?page=acceuil">Acceuil</a> </li>
-                <li class="nav_item nav_item_header"> <a href="index.php?page=disc_index.php">Vinyle</a> </li>
+                <li class="nav_item nav_item_header"> <a href="index.php?page=disc">Vinyle</a> </li>
                 <li class="nav_item nav_item_header"> <a href="index.php?page=artist_form.php">Artist</a> </li>
             </ul>
         </nav>
