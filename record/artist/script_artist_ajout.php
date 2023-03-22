@@ -45,7 +45,7 @@ catch (Exception $e) {
 }
 
 // Si OK: redirection vers la page artists.php
-header("Location: artists.php");
+header("Location: index.php?page=artist");
 
 // Fermeture du script
 exit;
