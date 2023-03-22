@@ -14,26 +14,54 @@
     align-items: center;
 }
 
-.background_new {
+.background_disc_new {
     background: linear-gradient(315deg, #eff0f3, #ebebeb);
     margin-left: 5%;
     padding-bottom: 4px;
 }
 
-.background_detail {
+.background_disc_detail {
     background: linear-gradient(315deg, #eff0f3, #ebebeb);
+    padding: 4px;
 }
 
-.background_form {
+.background_disc_form {
     background: linear-gradient(315deg, #eff0f3, #ebebeb);
     margin-left: 5%;
     padding-left: 10px;
     padding-bottom: 4px;
 }
 
+.background_artist_index {
+    background: linear-gradient(315deg, #eff0f3, #ebebeb);
+    margin-left: 5%;
+    padding: 10px;
+}
+
+.background_artist_detail {
+    background: linear-gradient(315deg, #eff0f3, #ebebeb);
+    margin-left: 2%;
+    padding: 10px;
+}
+
+.background_artist_new {
+    background: linear-gradient(315deg, #eff0f3, #ebebeb);
+    margin-left: 5%;
+    padding: 10px;
+}
+
 #titre {
     margin-left: 1em;
     color: black !important;
+}
+
+.titre_artist {
+    border-bottom: 1px solid #dfdfdf;
+    width: 40%;
+}
+
+.input_artist_new {
+    width: 15%;
 }
 
 ul {
@@ -77,7 +105,7 @@ footer {
     transition: 0.25s;
     font-size: 27px;
     border-radius: 5px;
-    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.048);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.164);
     border: 2px solid white;
 }
 
@@ -95,13 +123,17 @@ footer {
     background-color: #ff8e3c !important;
     border: #ff8e3c !important;
     color: white;
-    transition:  0.25s;
 }
 
 .bouton:hover {
-    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.048);
+    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.150);
     color: #ebebeb;
     transition: 0.25s;
+}
+
+.text_artist {
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
 .nav_item_footer {
@@ -120,7 +152,7 @@ footer {
     transition: 0.25s;
     font-size: 16px;
     border-radius: 5px;
-    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.048);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.164);
     border: 2px solid white;
 }
 

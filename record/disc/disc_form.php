@@ -13,9 +13,9 @@
 ?>
 
     <body class="container-fluid">
-        <div class="background_form">
+        <div class="background_disc_form">
             <h2>Modifier un Vinyle</h2>
-            <form class="form-group" action ="script_disc_modif.php?id=<?= $DiscModification->disc_id ?>" method="post" enctype='multipart/form-data'>
+            <form class="form-group" action ="/disc/script_disc_modif.php?id=<?= $DiscModification->disc_id ?>" method="post" enctype='multipart/form-data'>
                 
                 <div class="col-8">
                     <label class="form-label" for="title">Title</label>
@@ -26,7 +26,7 @@
                         <?php foreach($myartist as $artist): 
                             if($artist->artist_id == $DiscModification->artist_id){ ?>
                                 <option value="<?= $artist->artist_id ?>" selected="selected"><?= $artist->artist_name ?></option>
-                            <?php } else{ ?>                        
+                            <?php } else { ?>                        
                             <option value="<?= $artist->artist_id ?>"><?= $artist->artist_name ?></option>
                         <?php } endforeach; ?>
                     </select>

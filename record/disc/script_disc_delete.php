@@ -3,7 +3,7 @@
     if (!(isset($_GET['id'])) || intval($_GET['id']) <= 0) GOTO TrtRedirection;
 
     // Si la vérification est ok :
-    require "db.php"; 
+    require "../db.php"; 
     $db = ConnexionBase();
 
     try {
@@ -15,10 +15,10 @@
     }
     catch (Exception $e) {
         echo "Erreur : " . $requete->errorInfo()[2] . "<br>";
-        die("Fin du script (script_disc_modif.php)");
+        die("Fin du script (script_disc_delete.php)");
     }
 
     TrtRedirection:
-    header("Location: index.php?page=disc");
+    header("Location:/index.php?page=disc");
     exit;
 ?>

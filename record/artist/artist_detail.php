@@ -1,40 +1,46 @@
 ﻿<?php
-
-    // On se connecte à la BDD via notre fichier db.php :
     require "db.php";
     $db = connexionBase();
-
-    // On récupère l'ID passé en paramètre :
     $id = $_GET["id"];
-
-    // On crée une requête préparée avec condition de recherche :
-    $requete = $db->prepare("SELECT * FROM artist WHERE artist_id=?");
-    // on ajoute l'ID du disque passé dans l'URL en paramètre et on exécute :
+    $requete = $db->prepare("SELECT * FROM disc natural join artist WHERE artist_id=?");
     $requete->execute(array($id));
+    $myDisc = $requete->fetchAll(PDO::FETCH_OBJ);
+    $requete->closeCursor();
 
-    // on récupère le 1e (et seul) résultat :
+    $id = $_GET["id"];
+    $requete = $db->prepare("SELECT * FROM artist WHERE artist_id=?");
+    $requete->execute(array($id));
     $myArtist = $requete->fetch(PDO::FETCH_OBJ);
-
-    // on clôt la requête en BDD
     $requete->closeCursor();
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>PDO - Détail</title>
-    </head>
-    
-
     <body>
-        Artiste N°<?php echo $myArtist->artist_id ?>
-        Nom de l'artiste : <?= $myArtist->artist_name ?>
-        Site Internet : <?= $myArtist->artist_url ?>
-        <a href="artist_form.php?id=<?= $myArtist->artist_id ?>">Modifier</a>
-        <a href="script_artist_delete.php?id=<?= $myArtist->artist_id ?>">Supprimer</a>
-    </body>
+        <div class="background_artist_detail">
+            <h2> <?php echo $myArtist->artist_name ?> </h2>
+            <p>Site Internet : <a href="<?= $myArtist->artist_url ?>"><?php echo $myArtist->artist_url ?></a></p>
 
-</html>
+            <div class="mt-2">
+                <a class="btn bouton" href="artist_form.php?id=<?= $myArtist->artist_id ?>">Modifier</a>
+                <a class="btn bouton" href="script_artist_delete.php?id=<?= $myArtist->artist_id ?>">Supprimer</a>
+            </div>
+        </div>
+
+        <div class="background_artist_detail mt-2">
+            <h4>Liste de vinyle de l'artiste:</h4>
+            <div class="row">
+                <?php foreach($myDisc as $disc_artist): ?>
+                    <table class="d-flex col vinyle">
+                        <thead>
+                            <td><img class="img-responsive jaquette_index" src="jaquettes/<?= $disc_artist->disc_picture ?>"></td>
+                        </thead>
+                        <tbody class="mx-3">
+                            <tr class="row">
+                                <td><p class="m-0 fw-bold fs-5"><?= $disc_artist->disc_title ?></p></td>
+                                <td class="mt-4"><a class="btn bouton" href="index.php?page=disc_detail&id=<?= $disc_artist->disc_id ?>">Détail</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <?php endforeach; ?>
+            </div>
+            <a class="btn bouton mt-2" href="index.php?page=artist">Revenir à la liste des artistes</a>
+        </div>

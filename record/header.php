@@ -16,7 +16,7 @@
             <ul>
                 <li class="nav_item nav_item_header"> <a href="index.php?page=acceuil">Acceuil</a> </li>
                 <li class="nav_item nav_item_header"> <a href="index.php?page=disc">Vinyle</a> </li>
-                <li class="nav_item nav_item_header"> <a href="index.php?page=artist_form.php">Artist</a> </li>
+                <li class="nav_item nav_item_header"> <a href="index.php?page=artist">Artist</a> </li>
             </ul>
         </nav>
     </header>

@@ -20,7 +20,7 @@
 ?>
  
     <body class="container-fluid ">
-        <div class="background_detail">
+        <div class="background_disc_detail">
             <h2>Details</h2>
 
             <div class="row justify-content-start">
@@ -45,11 +45,16 @@
                     <input class="form-control" type="text" name="price" value="<?php echo $DiscDetails->disc_price ?>" disabled="disabled">
                 </div>
             </div>
+            
             <img class="img-responsive jaquette_details mt-3" src="../jaquettes/<?= $DiscDetails->disc_picture ?>">
 
-            <div class="align-content-end mt-2">
+            <div class="mt-2">
                 <a class="btn bouton" href="index.php?page=disc_form&id=<?= $DiscDetails->disc_id ?>">Modifier</a> 
-                <a class="btn bouton" href="index.php?page=disc_delete&id=<?= $DiscDetails->disc_id ?>" onclick="return confirm('Êtes-vous sûr de supprimer <?php echo $DiscDetails->disc_title ?> de <?php echo $DiscDetails->artist_name ?> ? ')">Supprimer</a>
+                <a class="btn bouton" href="/disc/script_disc_delete.php?id=<?= $DiscDetails->disc_id ?>" onclick="return confirm('Êtes-vous sûr de supprimer <?php echo $DiscDetails->disc_title ?> de <?php echo $DiscDetails->artist_name ?> ? ')">Supprimer</a>
                 <a class="btn bouton" href="index.php?page=disc">Retour</a>
+            </div>
+
+            <div>
+                <a class="btn bouton mt-2" href="index.php?page=artist_detail&id=<?= $DiscDetails->artist_id ?>">Voir les autres vinyles de l'artiste</a>
             </div>
         </div>

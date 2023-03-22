@@ -6,6 +6,7 @@
     $genre = (isset($_POST['genre']) && $_POST['genre'] != "") ? $_POST['genre'] : Null;
     $label = (isset($_POST['label']) && $_POST['label'] != "") ? $_POST['label'] : Null;
     $price = (isset($_POST['price']) && $_POST['price'] != "") ? $_POST['price'] : Null;
+    $picture = (isset($_POST['disc_picture']) && $_POST['disc_picture'] != "") ? $_POST['disc_picture'] : null;
     
     if ($_FILES["disc_picture"]["error"] > 0) {
         echo "Erreur !";
@@ -19,15 +20,14 @@
             finfo_close($finfo);
 
             if (in_array($mimetype, $aMimeTypes)){
-                move_uploaded_file($_FILES["disc_picture"]["tmp_name"], "../jaquettes/".$_FILES["disc_picture"]["name"]); 
+                move_uploaded_file($_FILES["disc_picture"]["tmp_name"], "../jaquettes/".$_FILES["disc_picture"]["name"]);
+                $picture = $_FILES["disc_picture"]["name"];
             }   else {
                 // Le type n'est pas autorisé, donc ERREUR
                 echo "Type de fichier non autorisé";    
                 exit;
         }  
     }
-
-    $picture = $_FILES["disc_picture"]["name"];
     
     /*var_dump($id);
     var_dump($title);
@@ -68,6 +68,6 @@
         die("Fin du script (script_disc_modif.php)");
     }
 
-    header("Location: disc_detail.php?id=".$id);
+    header("Location:/index.php?page=disc");
     exit;
 ?>

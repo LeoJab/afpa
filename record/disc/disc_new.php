@@ -13,11 +13,11 @@ $requete->closeCursor();
 ?>
 
 <body>
-    <div class="container-fluid background_new">
+    <div class="container-fluid background_disc_new">
 
         <h1>Ajouter un vinyle</h1>
 
-        <form class="col-6 form-group" action ="script_disc_ajout.php" method="post" enctype='multipart/form-data'>
+        <form class="col-6 form-group" action ="/disc/script_disc_ajout.php" method="post" enctype='multipart/form-data'>
 
             <label class="form-label" for="title">Title</label>
             <input class="form-control" type="text" name="title" id="title" placeholder="Enter title">
