@@ -38,6 +38,15 @@
     {
         include("artist/artist_index.php");
     }
+
+    //Login
+    if(isset($_GET['page']) && $_GET['page']=='login')
+    {
+        include("user/login_form.php");
+    } else if(isset($_GET['page']) && $_GET['page']=='register')
+    {
+        include("user/register_form.php");
+    }
 ?>
 
 <?php 

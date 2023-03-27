@@ -60,6 +60,17 @@
     width: 40%;
 }
 
+.login_register {
+    float: right;
+    margin-left: auto;
+    margin-right: 15px;
+    text-align: center;
+}
+
+.login {
+    margin-left: 50px;
+}
+
 .input_artist_new {
     width: 15%;
 }

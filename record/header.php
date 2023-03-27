@@ -19,4 +19,9 @@
                 <li class="nav_item nav_item_header"> <a href="index.php?page=artist">Artist</a> </li>
             </ul>
         </nav>
+
+        <div class="login_register">
+            <a class="btn bouton" href="index.php?page=login">Connexion</a>
+            <a class="btn bouton" href="index.php?page=register">Inscription</a>
+        </div>
     </header>
