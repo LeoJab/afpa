@@ -10,7 +10,12 @@ $requete->closeCursor();
     <div class="background_artist_index">
         <div class="mb-3 titre_artist">
             <h1>Liste des Artistes:</h1>
-            <a class="btn align-self-center bouton mb-3" href="index.php?page=artist_new">Ajouter</a>
+            <?php if($_SESSION == NULL){ ?>
+                    
+            <?php } else{ ?>
+                <a class="btn align-self-center bouton mb-3" href="index.php?page=artist_new">Ajouter</a>
+            <?php } ?>
+            
         </div>
 
         <table>

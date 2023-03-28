@@ -20,8 +20,12 @@
             <p>Site Internet : <a href="<?= $myArtist->artist_url ?>"><?php echo $myArtist->artist_url ?></a></p>
 
             <div class="mt-2">
-                <a class="btn bouton" href="artist_form.php?id=<?= $myArtist->artist_id ?>">Modifier</a>
-                <a class="btn bouton" href="script_artist_delete.php?id=<?= $myArtist->artist_id ?>">Supprimer</a>
+                <?php if($_SESSION == NULL){ ?>
+                    
+                <?php } else{ ?>
+                    <a class="btn bouton" href="artist_form.php?id=<?= $myArtist->artist_id ?>">Modifier</a>
+                    <a class="btn bouton" href="script_artist_delete.php?id=<?= $myArtist->artist_id ?>">Supprimer</a>
+                <?php } ?>
             </div>
         </div>
 

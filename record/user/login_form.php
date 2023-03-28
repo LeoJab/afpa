@@ -12,4 +12,5 @@
         <input class="form-control" name='mdp' type="password" autocomplete="off">
 
         <input class="btn bouton mt-3" name="connexion" type="submit" value="Connexion">
+        <a class="btn bouton mt-3" href="index.php?page=register">S'inscrire</a>
     </form>

@@ -10,7 +10,11 @@ $requete->closeCursor();
 <body class="container-fluid">
     <div class="d-flex justify-content-between mb-4">
         <h1>Liste des disques (<?= count($tableau) ?>)</h1>
-        <a class="btn btn-primary align-self-center bouton" href="index.php?page=disc_new">Ajouter</a>
+        <?php if($_SESSION == NULL){ ?>
+           
+            <?php } else{ ?>
+                    <a class="btn btn-primary align-self-center bouton" href="index.php?page=disc_new">Ajouter</a>
+            <?php } ?>
     </div>
 
     <div class="row">

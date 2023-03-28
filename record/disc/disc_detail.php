@@ -49,9 +49,13 @@
             <img class="img-responsive jaquette_details mt-3" src="../jaquettes/<?= $DiscDetails->disc_picture ?>">
 
             <div class="mt-2">
-                <a class="btn bouton" href="index.php?page=disc_form&id=<?= $DiscDetails->disc_id ?>">Modifier</a> 
-                <a class="btn bouton" href="/disc/script_disc_delete.php?id=<?= $DiscDetails->disc_id ?>" onclick="return confirm('Êtes-vous sûr de supprimer <?php echo $DiscDetails->disc_title ?> de <?php echo $DiscDetails->artist_name ?> ? ')">Supprimer</a>
-                <a class="btn bouton" href="index.php?page=disc">Retour</a>
+                <?php if($_SESSION == NULL){ ?>
+                    <a class="btn bouton" href="index.php?page=disc">Retour</a>
+                <?php } else{ ?>
+                    <a class="btn bouton" href="index.php?page=disc_form&id=<?= $DiscDetails->disc_id ?>">Modifier</a> 
+                    <a class="btn bouton" href="/disc/script_disc_delete.php?id=<?= $DiscDetails->disc_id ?>" onclick="return confirm('Êtes-vous sûr de supprimer <?php echo $DiscDetails->disc_title ?> de <?php echo $DiscDetails->artist_name ?> ? ')">Supprimer</a>
+                    <a class="btn bouton" href="index.php?page=disc">Retour</a>
+                <?php } ?>
             </div>
 
             <div>
