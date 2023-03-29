@@ -1,6 +1,6 @@
 ﻿<body>
     
-    <form class="login col-2" action="/user/register_script.php" method="post" enctype='multipart/form-data'>
+    <form class="login col-2 background_register" action="/user/register_script.php" method="post" enctype='multipart/form-data'>
         <label class="form-label" for="nom">Nom</label>
         <input class="form-control" name="nom" type="text" autocomplete="off" placeholder="Nom">
 

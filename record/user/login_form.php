@@ -4,9 +4,9 @@
 
 <body>
     
-    <form class="login col-2" action="/user/login_script.php" method="post" enctype='multipart/form-data'>
-        <label class="form-label" for="pseudo">Pseudo</label>
-        <input class="form-control" name="pseudo" type="text" autocomplete="off">
+    <form class="login col-2 background_login" action="/user/login_script.php" method="post" enctype='multipart/form-data'>
+        <label class="form-label" for="email_pseudo">Email ou Pseudo</label>
+        <input class="form-control" name="email_pseudo" type="text" autocomplete="off">
 
         <label class="form-label" for="mdp">Mot de passe</label>
         <input class="form-control" name='mdp' type="password" autocomplete="off">
