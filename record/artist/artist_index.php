@@ -1,7 +1,7 @@
 ﻿<?php
 require "db.php";
 $db = ConnexionBase();
-$requete = $db->query("SELECT * FROM artist order by artist_name");
+$requete = $db->query("SELECT * FROM artist");
 $tableau = $requete->fetchAll(PDO::FETCH_OBJ);
 $requete->closeCursor();
 ?>

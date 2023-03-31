@@ -11,6 +11,9 @@
         <label class="form-label" for="mdp">Mot de passe</label>
         <input class="form-control" name='mdp' type="password" autocomplete="off">
 
-        <input class="btn bouton mt-3" name="connexion" type="submit" value="Connexion">
-        <a class="btn bouton mt-3" href="index.php?page=register">S'inscrire</a>
+        <div id="bouton_login_register">
+            <input class="btn bouton mt-3" name="connexion" type="submit" value="Connexion">
+            <a class="btn bouton mt-3" href="index.php?page=register">S'inscrire</a>
+            <a class="login_mdp_oublie" href="index.php?page=mdp_oublie">Mot de passe oublié</a>
+        </div>
     </form>

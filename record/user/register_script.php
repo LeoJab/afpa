@@ -29,6 +29,7 @@ if(isset($_POST["inscription"])){
                 $requete3 = $db->prepare('SELECT * FROM login where nom = ? and prenom = ? and pseudo = ? and email = ?');
                 $requete3->execute(array($nom, $prenom, $pseudo, $email));
                 $requete3->closeCursor();
+                
                 if($requete3->rowCount() > 0) {
                     $_SESSION['nom'] = $nom;
                     $_SESSION['prenom'] = $prenom;

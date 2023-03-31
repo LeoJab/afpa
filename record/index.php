@@ -3,6 +3,11 @@
 ?>
 
 <?php
+    if(isset($_GET['page']) && $_GET['page']=='acceuil')
+    {
+        include("acceuil.php");
+    }
+
     //Disc
     if(isset($_GET['page']) && $_GET['page']=='disc')
     {
@@ -46,9 +51,12 @@
     } else if(isset($_GET['page']) && $_GET['page']=='register')
     {
         include("user/register_form.php");
+    } else if(isset($_GET['page']) && $_GET['page']=='mdp_oublie')
+    {
+        include("user/mdp_oublie.php");
     }
 ?>
 
 <?php 
-    include("footer.php");
+    include("footer.php"); 
 ?>

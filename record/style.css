@@ -1,4 +1,5 @@
-﻿body {
+﻿/* Background */
+body {
     background-color: #eff0f3;
 }
 
@@ -62,31 +63,7 @@
     padding: 10px;
 }
 
-#titre {
-    margin-left: 1em;
-    color: black !important;
-}
-
-.titre_artist {
-    border-bottom: 1px solid #dfdfdf;
-    width: 40%;
-}
-
-.login_register {
-    float: right;
-    margin-left: auto;
-    margin-right: 15px;
-    text-align: center;
-}
-
-.login {
-    margin-left: 50px;
-}
-
-.input_artist_new {
-    width: 15%;
-}
-
+/* Balise HTML */
 ul {
     display: flex;
     list-style: none;
@@ -110,6 +87,12 @@ label {
 footer {
     display: block;
 
+}
+
+/* Nav */
+#titre {
+    margin-left: 1em;
+    color: black !important;
 }
 
 .nav_item_header {
@@ -136,33 +119,7 @@ footer {
     align-items: center;
 }
 
-.vinyle {
-    background: linear-gradient(225deg, #eff0f3, #ebebeb);
-    transition: 0.25s;
-}
-
-.vinyle:hover {
-    background: linear-gradient(225deg, #ebebeb, #ebebeb);
-    transition: 0.25s;
-}
-
-.bouton{
-    background-color: #ff8e3c !important;
-    border: #ff8e3c !important;
-    color: white;
-}
-
-.bouton:hover {
-    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.150);
-    color: #ebebeb;
-    transition: 0.25s;
-}
-
-.text_artist {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
+/* Footer */
 .nav_item_footer {
     display: flex;
     align-content: center;
@@ -179,6 +136,109 @@ footer {
     transition: 0.10s;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.164);
     border: 2px solid white;
+}
+
+/* Login/Register */
+.login_register {
+    float: right;
+    margin-left: auto;
+    margin-right: 15px;
+    text-align: center;
+}
+
+.login {
+    margin-left: 50px;
+}
+
+.login_mdp_oublie {
+    display: flex;
+    color: black;
+    font-size: 15px;
+}
+
+.login_mdp_oublie:hover {
+    color: black;
+}
+
+/* Disc */
+.vinyle {
+    background: linear-gradient(225deg, #eff0f3, #ebebeb);
+    transition: 0.25s;
+}
+
+.vinyle:hover {
+    background: linear-gradient(225deg, #ebebeb, #ebebeb);
+    transition: 0.25s;
+}
+
+/* Artist */
+.titre_artist {
+    border-bottom: 1px solid #dfdfdf;
+    width: 40%;
+}
+
+.input_artist_new {
+    width: 15%;
+}
+
+.text_artist {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Acceuil */
+.body_acceuil {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#titre_acceuil {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.103);
+    width: 50%;
+    padding-bottom: 5px;
+}
+
+.acceuil_vinyle {
+    display: flex;
+    background: linear-gradient(180deg, #eff0f3, #ebebeb);
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+
+.vinyle_acceuil {
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.tr_vinyle_acceuil {
+    display: flex;
+    flex-direction: column;
+}
+
+#bouton_liste_vinyle {
+    text-align: center;
+}
+
+.bouton_vinyle_acceuil {
+    text-align: center;
+    font-size: 25px;
+    padding: 5px;
+    margin-top: 15px;
+}
+
+/* Class */
+.bouton{
+    background-color: #ff8e3c !important;
+    border: #ff8e3c !important;
+    color: white;
+}
+
+.bouton:hover {
+    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.150);
+    color: #ebebeb;
+    transition: 0.25s;
 }
 
 .jaquette_index {
