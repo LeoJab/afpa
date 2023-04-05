@@ -1,4 +1,4 @@
-﻿    </body>
+    </body>
     <footer id="background_footer">
         <div id="footer">
             <h1 id="titre_footer">The District</h1>

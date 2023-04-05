@@ -1,12 +1,12 @@
-﻿<?php
+<?php
 require "db.php";
 $db = ConnexionBase();
 
-$requete1 = $db->query("SELECT * FROM categorie order by libelle");
+$requete1 = $db->query("SELECT * FROM categorie where active = 'yes' order by libelle");
 $MyCategorie = $requete1->fetchAll(PDO::FETCH_OBJ);
 $requete1->closeCursor();
 
-$requete2 = $db->query("SELECT * FROM plat order by libelle limit 3");
+$requete2 = $db->query("SELECT * FROM plat order by id limit 4");
 $MyPlat = $requete2->fetchAll(PDO::FETCH_OBJ);
 $requete2->closeCursor();
 ?>
@@ -16,7 +16,7 @@ $requete2->closeCursor();
         <img id="logo_acceuil" src="/ASSET/img/images_the_district/the_district_brand/logo_transparent.png" alt="banniere">
         <form id="bouton_barre_recherche">
             <label id="label_recherche" for="recherche">Rechercher un plat ou une catégorie</label>
-            <div>
+            <div class="d-flex">
                 <input id="barre_recherche" name="recherche" type="search" placeholder="Rechercher" aria-label="Search">
                 <button id="bouton_recherche" type="submit">Rechercher</button>
             </div>
@@ -30,7 +30,7 @@ $requete2->closeCursor();
 
 <div id="categorie_acceuil">
     <?php foreach($MyCategorie as $categorie): ?>
-        <a href="#">
+        <a class="lien_categorie_accceuil" href="index.php?page=<?= $categorie->libelle ?>">
             <table class="table_categorie_acceuil">
                 <thead>
                     <tr>
@@ -51,11 +51,11 @@ $requete2->closeCursor();
 
 <div id="plat_acceuil">
     <?php foreach($MyPlat as $plat): ?>
-        <a href="#">
+        <a class="lien_plat_accceuil" href="index.php?page=plat">
             <table class="table_plat_acceuil">
                 <thead>
                     <tr>
-                        <td><img class="image_plat_acceuil" src="/ASSET/img/images_the_district/plat/<?= $plat->image ?>" alt="image_plat"></td>
+                        <td><img class="image_plat_acceuil" src="/ASSET/img/images_the_district/food/<?= $plat->image ?>" alt="image_plat"></td>
                     </tr>
                 </thead>
                 <tbody>

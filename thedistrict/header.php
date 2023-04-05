@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link href="/ASSET/css/style.css" rel="stylesheet">
+    <script src="/ASSET/js/main.js"></script>
     <title>The District</title>
 </head>
 
@@ -15,8 +16,8 @@
 
         <ul id="ul_header">
             <li class="bouton_header"> <a class="a_header" href="index.php?page=acceuil">Accueil</a> </li>
-            <li class="bouton_header"> <a class="a_header" href="#">Catégorie</a></li>
-            <li class="bouton_header"> <a class="a_header" href="#">Plats</a></li>
+            <li class="bouton_header"> <a class="a_header" href="index.php?page=categorie">Catégories</a></li>
+            <li class="bouton_header"> <a class="a_header" href="index.php?page=plat">Plats</a></li>
             <li class="bouton_header"> <a class="a_header" href="#">Contact</a></li>
         </ul>
 
