@@ -11,20 +11,7 @@ $MyPlat = $requete2->fetchAll(PDO::FETCH_OBJ);
 $requete2->closeCursor();
 ?>
 
-<div id="fond_banniere_recherche">
-    <div id="banniere_recherche">
-        <img id="logo_acceuil" src="/ASSET/img/images_the_district/the_district_brand/logo_transparent.png" alt="banniere">
-        <form id="bouton_barre_recherche">
-            <label id="label_recherche" for="recherche">Rechercher un plat ou une catégorie</label>
-            <div class="d-flex">
-                <input id="barre_recherche" name="recherche" type="search" placeholder="Rechercher" aria-label="Search">
-                <button id="bouton_recherche" type="submit">Rechercher</button>
-            </div>
-        </form>
-    </div>
-</div>
-
-<h1 id="titre_accueil">Accueil</h1>
+<h1 id="titre_acceuil">Accueil</h1>
 
 <h2 id="titre_categorie_acceuil">Catégories</h2>
 

@@ -1,47 +1,9 @@
 <?php
-require "db.php";
-$db = ConnexionBase();
-
-//Catégories
-$requete1 = $db->query("SELECT * FROM categorie where active = 'yes' order by libelle ");
-$MyCategorieActive = $requete1->fetchAll(PDO::FETCH_OBJ);
-$requete1->closeCursor();
-
-$requete2 = $db->query("SELECT * FROM categorie where active = 'no' order by libelle ");
-$MyCategorieNoActive = $requete2->fetchAll(PDO::FETCH_OBJ);
-$requete2->closeCursor();
-
 //Plat
 $requete3 = $db->query("SELECT * FROM plat where active = 'yes' and id_categorie = 4");
 $MyPlatAllActive = $requete3->fetchAll(PDO::FETCH_OBJ);
 $requete3->closeCursor();
 ?>
-
-<div id="fond_banniere_recherche">
-    <div id="banniere_recherche">
-        <img id="logo_acceuil" src="/ASSET/img/images_the_district/the_district_brand/logo_transparent.png" alt="banniere">
-        <form id="bouton_barre_recherche">
-            <label id="label_recherche" for="recherche">Rechercher un plat ou une catégorie</label>
-            <div class="d-flex">
-                <input id="barre_recherche" name="recherche" type="search" placeholder="Rechercher" aria-label="Search">
-                <button id="bouton_recherche" type="submit">Rechercher</button>
-            </div>
-        </form>
-    </div>
-</div>
-
-<div id="select_cate_plat">
-    <h2 id="titre_select_cate_plat">Choisissez une Catégorie</h2>
-    <ul id="list_cate_plat">
-        <?php foreach($MyCategorieActive as $categorie_act): ?>
-            <button class="btn_cate_plat_act"><li><a class="a_cate_plat" href="index.php?page=<?= $categorie_act->libelle ?>"><?= $categorie_act->libelle ?></a></li></button>
-        <?php endforeach; ?>
-
-        <?php foreach($MyCategorieNoActive as $categorie_no_act): ?>
-            <button class="btn_cate_plat_no_act" disabled="disabled"><li><a class="a_cate_plat" href="index.php?page=<?= $categorie_no_act->libelle ?>"><?= $categorie_no_act->libelle ?></a></li></button>
-        <?php endforeach; ?>
-    </ul>
-</div>
 
 <div id="cate_all_plat">
     <h2 class="titre_categorie_plat">Pizza</h2>
