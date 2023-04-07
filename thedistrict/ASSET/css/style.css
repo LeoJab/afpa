@@ -20,7 +20,15 @@ body {
     display: none;
 }
 
-#nav_responsive_header {
+.nav_responsive_header_none {
+    display: none;
+}
+
+#icon_nav_reponsive_tab_ver {
+    display: none;
+}
+
+#responsive_login_register_tab_ver {
     display: none;
 }
 
@@ -616,6 +624,10 @@ body {
         display: none;
     }
 
+    #icon_nav_reponsive_tab_ver {
+        display: none;
+    }
+
     #icon_nav_responsive {
         display: flex;
         margin-right: 5%;
@@ -715,7 +727,7 @@ body {
     }
 
 
-    /* ACCEUIL */
+    /* BANNIERE */
     #logo_acceuil {
         width: 25%;
     }
@@ -738,7 +750,7 @@ body {
 
     #barre_recherche {
         font-size: 14px;
-        border-radius: 8px 0px 0px 8px;
+        border-radius: 5px 0px 0px 5px;
         margin: 0px;
         width: 80%;
         padding: 1px;
@@ -829,12 +841,108 @@ body {
         text-align: center;
     }
 
+    #cate_no_act {
+        justify-content: space-around;
+    }
+
     .table_cate_no_act {
         align-items: center;
     }
 
     .image_cate_no_act {
         width: 250px;
+    }
+
+    .tbody_cate_act {
+        overflow: hidden;
+    }
+
+    .libelle_cate_act {
+        font-size: 18px;
+    }
+
+    .libelle_cate_no_act {
+        font-size: 18px;
+    }
+
+    /* INTERFACE PLAT */
+    #select_cate_plat {
+        padding-bottom: 5px;
+    }
+
+    #titre_select_cate_plat {
+        font-size: 18px;
+    }
+
+    #list_cate_plat {
+        padding-left: 6px;
+        flex-wrap: wrap;
+    }
+
+    .btn_cate_plat_act {
+        padding: 2px;
+        margin: 2px 1px 2px 1px;
+    }
+
+    .btn_cate_plat_no_act {
+        padding: 2px;
+        margin: 2px 1px 2px 1px;
+    }
+
+    .a_cate_plat {
+        font-size: 16px;
+    }
+
+    /* PLAT */
+    .titre_categorie_plat {
+        font-size: 24px;
+    }
+
+    .table_plat {
+        margin-bottom: 15px;
+    }
+
+    .table_plat:hover {
+        transform: scale(1.03);
+    }
+
+    .libelle_plat {
+        font-size: 18px;
+    }
+
+    .desc_plat {
+        font-size: 14px;
+    }
+
+    .prix_plat {
+        font-size: 18px;
+    }
+
+    .icon_shop {
+        display: flex;
+        align-items: center;
+        width: 18px;
+        height: 18px;
+    }
+
+    /* CONTACT */
+    #fond_contact {
+        margin: 0px 5px 0px 5px;
+        margin-top: 15.5%;
+        margin-bottom: 20%;
+        padding-bottom: 2px;
+    }
+
+    #titre_contact {
+        font-size: 36px;
+    }
+
+    .input_contact {
+        width: 75%;
+    }
+
+    .btn_contact {
+        font-size: 20px;
     }
 
     /* FOOTER */
@@ -858,11 +966,225 @@ body {
 
 /* RESPONSIVE TABLETTE PORTRAIT*/
 @media screen and (max-width: 900px) {
-    
+    /* HEADER */
+    #login_register {
+        display: none;
+    }
+
+    #icon_nav_reponsive_tab_ver {
+        display: flex;
+    }
+
+    #btn_icon_nav_responsive_tab_ver {
+        background-color: #f2f7f5;
+        border-radius: 5px;
+        color: #2b2c34;
+        margin-right: 4px;
+        padding: 8px;
+        border: 0px;
+    }
+
+    .nav_responsive_tab_ver_header_id {
+        display: flex;
+    }
+
+    .nav_responsive_tab_ver_header {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+    }
+
+    .nav_responsive_tab_ver_header_none {
+        display: none;
+    }
+
+    .responsive_log {
+        text-decoration: none;
+        background-color: #f2f7f5;
+        border-radius: 5px;
+        text-decoration: none;
+        color: #2b2c34;
+        font-size: 20px;
+        padding: 2px;
+        margin-left: 4px;
+        margin-right: 4px;
+        margin-bottom: 4px;
+    }
+
+    .responsive_log:hover {
+        text-decoration: none;
+        background-color: #e1e6e4;
+        color: #2b2c34;
+    }
+
+    #responsive_login_register_tab_ver {
+        display: flex;
+        flex-direction: column;
+        background-color: #00473e;
+        border-radius: 0px 0px 0px 5px;
+        padding: 0px 10px 10px 10px;
+        box-shadow: 5px 5px 10px #2b2c34;
+        position: absolute;
+    }
+
+    /* BANNIERE */
+    #banniere_recherche {
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    #bouton_barre_recherche {
+        width: 35%;
+    }
+
+    #responsive_barre_bouton {
+        justify-content: center;
+    }
+
+    #barre_recherche {
+        width: 50%;
+    }
+
+    /* ACCEUIL */
+    #titre_acceuil {
+        font-size: 56px;
+        margin-left: 35%;
+        margin-right: 35%;
+    }
+
+    #titre_categorie_acceuil {
+        font-size: 28px;
+    }
+
+    .image_categorie_acceuil {
+        width: 300px;
+    }
+
+    .libelle_categorie_acceuil {
+        font-size: 24px;
+    }
+
+    #titre_plat_acceuil {
+        font-size: 28px;
+    }
+
+    .image_plat_acceuil {
+        width: 300px;
+    }
+
+    .libelle_plat_acceuil {
+        font-size: 24px;
+    }
+
+    /* CATEGORIE */
+    #cate_act {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .image_cate_act {
+        width: 300px;
+    }
+
+    .libelle_cate_act {
+        font-size: 24px;
+    }
+
+    #titre_cate_no_act {
+        margin-right: 15%;
+        margin-left: 15%;
+    }
+
+    .image_cate_no_act {
+        width: 300px;
+    }
+
+    #cate_no_act {
+        justify-content: space-around;
+    }
+
+    /* INTERFACE PLAT */
+    #select_cate_plat {
+        padding-bottom: 5px;
+    }
+
+    #titre_select_cate_plat {
+        font-size: 28px;
+    }
+
+    #list_cate_plat {
+        padding-left: 6px;
+        flex-wrap: wrap;
+    }
+
+    .btn_cate_plat_act {
+        padding: 2px;
+        margin: 2px 4px 2px 4px;
+    }
+
+    .btn_cate_plat_no_act {
+        padding: 2px;
+        margin: 2px 4px 2px 4px;
+    }
+
+    .a_cate_plat {
+        font-size: 24px;
+    }
+
+    /* PLAT */
+    #plat {
+        align-items: center;
+    }
+
+    .libelle_plat {
+        font-size: 22px;
+    }
+
+    .desc_plat {
+        font-size: 15px;
+    }
+
+    .prix_plat {
+        font-size: 22px;
+    }
+
+    .icon_shop {
+        width: 22px;
+        height: 22px;
+    }
+
+    /* CONTACT */
+    #fond_contact {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+    #titre_contact {
+        font-size: 48px;
+    }
+
+    .input_contact {
+        width: 80%;
+    }
+
+    .btn_contact {
+        font-size: 24px;
+    }
+
+    /* FOOTER */
+    #ul_footer {
+        flex-direction: row;
+    }
+
+    .li_footer {
+        margin-left: 10px;
+    }
+
 }
 
 
 /* RESPONSIVE TABLETTE PAYSAGE*/
 @media screen and (max-width: 1024px) {
+    /* HEADER */
     
 }

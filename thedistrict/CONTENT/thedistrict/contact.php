@@ -1,3 +1,10 @@
+<div id="fond_banniere_recherche">
+    <div id="banniere_recherche">
+        <img id="logo_acceuil" src="/ASSET/img/images_the_district/the_district_brand/logo_transparent.png" alt="banniere">
+        
+    </div>
+</div>
+
 <div id="fond_contact">
     <h1 id="titre_contact">Prendre Contact</h1>
 

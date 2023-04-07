@@ -23,7 +23,7 @@ $requete2->closeCursor();
                         <td><img class="image_cate_act" src="/ASSET/img/images_the_district/category/<?= $categorie->image ?>" alt="image_plat"></td>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="tbody_cate_act">
                     <tr>
                         <td class="libelle_cate_act"><?= $categorie->libelle ?></td>
                     </tr>
