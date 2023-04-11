@@ -625,7 +625,7 @@ body {
     }
 
     #icon_nav_reponsive_tab_ver {
-        display: none;
+        display: none !important;
     }
 
     #icon_nav_responsive {
@@ -745,14 +745,14 @@ body {
     }
 
     #label_recherche {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     #barre_recherche {
         font-size: 14px;
         border-radius: 5px 0px 0px 5px;
         margin: 0px;
-        width: 80%;
+        width: 80% !important;
         padding: 1px;
     }
 
@@ -934,7 +934,7 @@ body {
     }
 
     #titre_contact {
-        font-size: 36px;
+        font-size: 32px !important;
     }
 
     .input_contact {
