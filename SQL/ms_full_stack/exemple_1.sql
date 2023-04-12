@@ -1,3 +1,5 @@
+/* Formaliser des requêtes SQL */
+
 /* PARTIE 1 */
 
 /* 1. Afficher toutes les informations concernant les employés. */
@@ -167,3 +169,29 @@ having avg(salaire) > (SELECT avg(salaire)
 /* 10. Rechercher le nombre de salaires renseignés et le nombre de taux de
 commission renseignés */
 SELECT count(salaire) AS "Nombre de salaire", count(tauxcom) AS "Nombre de " from employe
+
+
+/* Manipuler une base de données */
+
+/* INSERT */
+INSERT into employe(noemp, nom, prenom, dateemb, nosup, titre, nodep, salaire, tauxcom)
+VALUES(26, 'Leo', 'Jabelin', '2022-04-11 00:00:00', '7', 'représentant', '50', 25000, 10),
+(27, 'George', 'Cliche', '2018-11-25 00:00:00', '4', 'représentant', '45', 18000, 5),
+(28, 'Soren', 'Charté', '2005-01-23 00:00:00', '8', 'secrétaire', '41', 51000, 15);
+
+INSERT into dept(nodept, nom, noregion)
+VALUES (80, 'Picardie', 6);
+
+/* UPDATE */
+UPDATE employe
+set salaire = (salaire * 1.1)
+where noemp = 17
+
+UPDATE dept
+set nom = "Logistique"
+where nodept = 45
+
+/* DELETE */
+DELETE
+FROM employe
+WHERE noemp = 28
