@@ -168,7 +168,7 @@ having avg(salaire) > (SELECT avg(salaire)
 
 /* 10. Rechercher le nombre de salaires renseignés et le nombre de taux de
 commission renseignés */
-SELECT count(salaire) AS "Nombre de salaire", count(tauxcom) AS "Nombre de " from employe
+SELECT count(salaire) AS "Nombre de salaire", count(tauxcom) AS "Nombre de commission" from employe
 
 
 /* Manipuler une base de données */
