@@ -15,8 +15,20 @@ if(isset($_GET['page']) && $_GET['page']=='acceuil') {
     include("CONTENT/thedistrict/plat.php");
 } else if(isset($_GET['page']) && $_GET['page']=='contact') {
     include("CONTENT/thedistrict/contact.php");
+} else if(isset($_GET['page']) && $_GET['page']=='connexion') {
+    include("CONTENT/thedistrict/connexion.php");
+} else if(isset($_GET['page']) && $_GET['page']=='inscription') {
+    include("CONTENT/thedistrict/inscription.php");
 } else
 
+// ERREURS
+if(isset($_GET['page']) && $_GET['page']=='erreur_champ') {
+    include("CONTENT/erreur/erreur_champ.php");
+} else if(isset($_GET['page']) && $_GET['page']=='erreur_email') {
+    include("CONTENT/erreur/erreur_email.php");
+} else if(isset($_GET['page']) && $_GET['page']=='erreur_mdp') {
+    include("CONTENT/erreur/erreur_mdp.php");
+} else
 
 // PLATS
 if(isset($_GET['page']) && $_GET['page'] == 'Burger') {

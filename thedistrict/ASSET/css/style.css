@@ -45,6 +45,7 @@ body {
     border-bottom: 4px solid #f2f7f5;
     margin: 0px;
     margin-left: 8px;
+    cursor: default;
 }
 
 #menu_nav {
@@ -117,6 +118,11 @@ body {
     display: flex;
     justify-content: space-between;
     width: 60%;
+}
+
+#banniere_recherche_solo {
+    display: flex;
+    justify-content: center;
 }
 
 #logo_acceuil {
@@ -575,7 +581,6 @@ body {
     margin: 2px;
     margin-top: 16px;
     margin-bottom: 16px;
-
 }
 
 /* FOOTER */
@@ -593,6 +598,7 @@ body {
     border-bottom: 4px solid #f2f7f5;
     margin: 0px;
     margin-left: 8px;
+    cursor: default;
 }
 
 #ul_footer {
@@ -609,6 +615,165 @@ body {
 }
 
 .a_footer:hover {
+    color: #e1e6e4;
+}
+
+/* CONNEXION */
+#div_form_connec {
+    background-color: #00473e;
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-top: 5%;
+    margin-bottom: 12%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+#titre_connec {
+    display: flex;
+    justify-content: center;
+    color: #f2f7f5;
+    cursor: default;
+}
+
+#form_connec {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.input_connec {
+    border-radius: 5px;
+    border: 1px solid #2b2c34;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 6px;
+    margin-bottom: 8px;
+}
+
+#btn_connec {
+    background-color: #f2f7f5;
+    border-radius: 5px;
+    border: 1px solid #2b2c34;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 4px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+#btn_connec:hover {
+    background-color: #e1e6e4;
+}
+
+/* INSCRIPTION */
+#div_form_inscr {
+    background-color: #00473e;
+    margin-top: 5%;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 5.7%;
+    padding: 5px 5px 5px 5px;
+}
+
+#titre_inscription {
+    display: flex;
+    justify-content: center;
+    color: #f2f7f5;
+    font-size: 64px;
+    cursor: default;
+}
+
+#form_inscr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#nom_prenom {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 8px;
+}
+
+#mdp_cmdp {
+    display: flex;
+    flex-direction: row;
+    border-top: 2px solid;
+    border-image: linear-gradient(45deg, #00473d9f, #f2f7f549, #00473d9f) 5;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding-top: 14px;
+}
+
+.input_full_inscr {
+    border-radius: 5px;
+    border: 1px solid #2b2c34;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 6px;
+    margin-bottom: 8px;
+}
+
+.input_demi_inscr {
+    border-radius: 5px;
+    border: 1px solid #2b2c34;
+    width: 100%;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 6px;
+}
+
+#btn_inscr {
+    background-color: #f2f7f5;
+    border-radius: 5px;
+    border: 1px solid #2b2c34;
+    color: #2b2c34;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 6px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+#btn_inscr:hover {
+    background-color: #e1e6e4;
+}
+
+/* ERREURS */
+#erreur_champ {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #2b2c34;
+    border-radius: 10px;
+    margin: 8% 25% 9.1% 25%;
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+}
+
+#titre_erreur_champ {
+    color: #f2f7f5;
+}
+
+#div_btn_erreur {
+    margin-top: 1%;
+}
+
+.btn_erreur {
+    background-color: #00473e;
+    text-decoration: none;
+    color: #f2f7f5;
+    border-radius: 5px;
+    font-size: 48px;
+    padding: 5px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.btn_erreur:hover {
     color: #e1e6e4;
 }
 

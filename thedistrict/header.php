@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -24,8 +28,8 @@
         </div>
 
         <div id="login_register">
-                <a class="log a_header_log" href="#">Connexion</a>
-                <a class="log a_header_log" href="#">Inscription</a>
+                <a class="log a_header_log" href="index.php?page=connexion">Connexion</a>
+                <a class="log a_header_log" href="index.php?page=inscription">Inscription</a>
         </div>
 
         <div id="icon_nav_responsive">
