@@ -19,6 +19,8 @@ if(isset($_GET['page']) && $_GET['page']=='acceuil') {
     include("CONTENT/thedistrict/connexion.php");
 } else if(isset($_GET['page']) && $_GET['page']=='inscription') {
     include("CONTENT/thedistrict/inscription.php");
+} else if(isset($_GET['page']) && $_GET['page']=='compte') {
+    include("CONTENT/thedistrict/mon_compte.php");
 } else
 
 // ERREURS
@@ -28,6 +30,8 @@ if(isset($_GET['page']) && $_GET['page']=='erreur_champ') {
     include("CONTENT/erreur/erreur_email.php");
 } else if(isset($_GET['page']) && $_GET['page']=='erreur_mdp') {
     include("CONTENT/erreur/erreur_mdp.php");
+} else if(isset($_GET['page']) && $_GET['page']=='erreur_connexion') {
+    include("CONTENT/erreur/erreur_connexion.php");
 } else
 
 // PLATS

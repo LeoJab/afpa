@@ -105,6 +105,62 @@ body {
     transition: 0.5s;
 }
 
+#log_connecte {
+    display: flex;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+#icon_connecte {
+    background-color: #f2f7f5;
+    border-radius: 5px;
+    color: #2b2c34;
+    padding: 4px;
+    border: 0px;
+}
+
+#icon_connecte:hover {
+    background-color: #e1e6e4;
+}
+
+.btn_deconnexion {
+    margin-left: 6px;
+}
+
+#nav_menu_connecte {
+    position: absolute;
+    right: 0px;
+}
+
+.nav_menu_connecte_block {
+    display: block;
+}
+
+.nav_menu_connecte_none {
+    display: none;
+}
+
+#menu_connecte {
+    background-color: #00473e;
+    padding: 5px 18px 5px 18px;
+    border-radius: 0px 0px 0px 5px;
+}
+
+.a_menu_connecte {
+    text-decoration: none;
+    color: #2b2c34;
+    font-size: 24px;
+    background-color: #f2f7f5;
+    border-radius: 5px;
+    padding: 2px 5px 2px 5px;
+}
+
+.a_menu_connecte:hover {
+    color: #2b2c34;
+    background-color: #e1e6e4;
+}
+
+
 /* ACCEUIL */
 #fond_banniere_recherche {
     background-image: linear-gradient(rgba(255, 50, 60, 0.70), rgba(255, 50, 60, 0.70)) , url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKH1Z3xn0kZjGvwg2GpFGEi80iXfkqDnQ8_KxkBBf8&s);

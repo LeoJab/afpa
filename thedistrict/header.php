@@ -27,10 +27,17 @@ session_start();
             </ul>
         </div>
 
-        <div id="login_register">
-                <a class="log a_header_log" href="index.php?page=connexion">Connexion</a>
-                <a class="log a_header_log" href="index.php?page=inscription">Inscription</a>
-        </div>
+        <?php if($_SESSION == NULL){ ?>
+            <div id="login_register">
+                    <a class="log a_header_log" href="index.php?page=connexion">Connexion</a>
+                    <a class="log a_header_log" href="index.php?page=inscription">Inscription</a>
+            </div>
+        <?php } else{?>
+            <div id="log_connecte">
+                <button id="icon_connecte" onclick="menu_connecte()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16"><path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg></button>
+                <a class="log a_header_log btn_deconnexion" href="/CONTENT/script/script_deconnexion.php">Déconnexion</a>
+            </div>
+        <?php } ?>
 
         <div id="icon_nav_responsive">
             <button id="btn_icon_nav_responsive" onclick="header_responsive()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-justify" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/></svg></button>
@@ -52,15 +59,21 @@ session_start();
         </ul>
 
         <div id="responsive_login_register">
-            <a class="responsive_log" href="#">Connexion</a>
-            <a class="responsive_log" href="#">Inscription</a>
+            <a class="responsive_log" href="index.php?page=connexion">Connexion</a>
+            <a class="responsive_log" href="index.php?page=inscription">Inscription</a>
         </div>
     </div>
 
     <div id="nav_responsive_tab_ver_header_id" class="nav_responsive_tab_ver_header_none">
         <div id="responsive_login_register_tab_ver">
-            <a class="responsive_log" href="#">Connexion</a>
-            <a class="responsive_log" href="#">Inscription</a>
+            <a class="responsive_log" href="index.php?page=connexion">Connexion</a>
+            <a class="responsive_log" href="index.php?page=inscription">Inscription</a>
+        </div>
+    </div>
+
+    <div id="nav_menu_connecte" class="nav_menu_connecte_none">
+        <div id="menu_connecte">
+            <a class="a_menu_connecte" href="index.php?page=compte">Mon compte</a>
         </div>
     </div>
 </nav>

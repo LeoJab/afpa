@@ -17,3 +17,13 @@ function header_responsive_tab_ver() {
         document.getElementById("nav_responsive_tab_ver_header_id").className = 'nav_responsive_tab_ver_header_none';
     }
 }
+
+function menu_connecte() {
+    var menu_connecte = document.getElementById("nav_menu_connecte").className;
+
+    if(menu_connecte != "nav_menu_connecte_block") {
+        document.getElementById("nav_menu_connecte").className = 'nav_menu_connecte_block';
+    } else {
+        document.getElementById("nav_menu_connecte").className = 'nav_menu_connecte_none';
+    }
+}

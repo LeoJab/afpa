@@ -9,7 +9,7 @@
     <h1 id="titre_inscription">Inscription</h1>
 
     <div>
-        <form id="form_inscr" action="../CONTENT/script/script_inscription.php" methode="post" enctype='multipart/form-data'>
+        <form id="form_inscr" action="../CONTENT/script/script_inscription.php" method="post" enctype='multipart/form-data'>
             <div id="nom_prenom">
                 <input class="input_demi_inscr" name="nom" type="text" placeholder="Nom">
                 <input class="input_demi_inscr" name="prenom" type="text" placeholder="Prenom">

@@ -1,7 +1,7 @@
 <?php
 if(isset($_POST["inscription"])){
 
-    require "db.php";
+    require "../../db.php";
     $db = connexionbase();
 
     if(!empty($_POST["nom"]) && !empty($_POST["prenom"]) && !empty($_POST["email"]) && !empty($_POST["numero"]) && !empty($_POST["mdp"]) && !empty($_POST["mdpc"])){
@@ -12,11 +12,11 @@ if(isset($_POST["inscription"])){
         $mdp = ($_POST["mdp"]);
         $mdpc = ($_POST["mdpc"]);
 
-        $requete1 = $db->prepare('SELECT email FROM utilisateur');
-        $verif_email = $requete1->fetchAll(PDO::FETCH_OBJ);
+        $requete1 = $db->prepare('SELECT * FROM utilisateur where email = ?');
+        $requete1->execute(array($email));
         $requete1->closeCursor();
 
-        if($email != $verif_email) {
+        if($requete1->rowCount() == 0) {
             if($mdp == $mdpc) {
                 $mdp = sha1($_POST["mdp"]);
 
@@ -34,22 +34,22 @@ if(isset($_POST["inscription"])){
                     $_SESSION["email"] = $email;
                     $_SESSION["id"] = $requete3->fetch()['id'];
 
-                    header('Location: /index.php?page=acceuil');
+                    header('Location: /../../index.php?page=acceuil');
                     exit;
                 }
             } else {
                 /* ERREUR MDP */
-                header('Location: /index.php?page=erreur_mdp');
+                header('Location: /../../index.php?page=erreur_mdp');
                 exit;
             }
         } else {
             /* ERREUR EMAIL */
-            header('Location: /index.php?page=erreur_email');
+            header('Location: /../../index.php?page=erreur_email');
             exit;
         }
     } else {
         /* ERREUR CHAMP */
-        header('Location: /index.php?page=erreur_champ');
+        header('Location: /../../index.php?page=erreur_champ');
         exit;
     }
 }

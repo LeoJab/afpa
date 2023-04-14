@@ -1,5 +1,6 @@
 ﻿<?php
 session_start();
+
 if(isset($_POST['connexion'])){
     if(!empty($_POST['email_pseudo']) && !empty($_POST['mdp'])){
         $pseudo = htmlspecialchars($_POST['email_pseudo']);
