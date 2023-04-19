@@ -16,6 +16,7 @@ if(isset($_POST['connexion'])){
             $_SESSION['nom'] = $nom;
             $_SESSION['prenom'] = $prenom;
             $_SESSION['email'] = $email;
+            $_SESSION['numero'] = $numero;
             $_SESSION['id'] = $requete_user->fetch()['id'];
             
             header("Location: /../../index.php?page=acceuil");

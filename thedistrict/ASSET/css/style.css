@@ -576,7 +576,7 @@ body {
     margin-left: 35%;
     margin-right: 35%;
     padding: 12px;
-    margin-bottom: 10.75%;
+    margin-bottom: 15%;
 }
 
 #btn_plat_introuvable:hover{
@@ -796,6 +796,53 @@ body {
 
 #btn_inscr:hover {
     background-color: #e1e6e4;
+}
+
+/* VOTRE COMPTE */
+#information {
+    margin: 5% 25% 0% 25%;
+    background-color: #00473e;
+    padding: 1% 0% 1.5% 0%;
+}
+
+#titre_compte {
+    color: #f2f7f5;
+    font-size: 48px;
+    text-align: center;
+}
+
+#information_compte {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0% 25% 0% 25%;
+}
+
+.input_compte {
+    background-color: #e1e6e4;
+    color: #2b2c34;
+    border: 0px;
+    border-radius: 4px;
+    font-size: 18px;
+}
+
+.label_compte {
+    display: flex;
+    color: #f2f7f5;
+    font-size: 20px;
+    margin-top: 4px;
+}
+
+#btn_modif_compte {
+    display: flex;
+    justify-content: center;
+    background-color: #f2f7f5;
+    text-decoration: none;
+    color: #2b2c34;
+    font-size: 32px;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 2% 25% 0% 25%;
 }
 
 /* ERREURS */

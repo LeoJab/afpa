@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 if(isset($_POST["inscription"])){
 
     require "../../db.php";
@@ -32,6 +34,7 @@ if(isset($_POST["inscription"])){
                     $_SESSION["nom"] = $nom;
                     $_SESSION["prenom"] = $prenom;
                     $_SESSION["email"] = $email;
+                    $_SESSION['numero'] = $numero;
                     $_SESSION["id"] = $requete3->fetch()['id'];
 
                     header('Location: /../../index.php?page=acceuil');
