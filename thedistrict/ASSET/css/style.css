@@ -845,6 +845,42 @@ body {
     margin: 2% 25% 0% 25%;
 }
 
+#vos_commandes {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1% 15% 1% 15%;
+}
+
+#titre_vos_commandes {
+    color: #2b2c34;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.table_vos_commandes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #2b2c34;
+    border: #2b2c34 solid 2px;
+    border-radius: 5px;
+}
+
+.td_img_vos_commandes {
+    display: flex;
+}
+
+.td_vos_commandes {
+    display: flex;
+    justify-content: center;
+    color: #f2f7f5;
+    font-size: 20px;
+}
+
+.vos_commandes_libelle {
+    font-size: 28px;
+}
+
 /* ERREURS */
 #erreur_champ {
     display: flex;

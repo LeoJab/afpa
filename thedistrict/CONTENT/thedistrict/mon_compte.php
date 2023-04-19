@@ -7,7 +7,7 @@
     $info_utilisateur = $requete->fetchAll(PDO::FETCH_OBJ);
     $requete->closeCursor();
 
-    $requete = $db->prepare('SELECT plat.image, plat.libelle, commande.quantite, commande.total, commande.date_commande from commande join plat on commande.id_plat = plat.id where commande.email_client ="'. $email .'";');
+    $requete = $db->prepare('SELECT plat.image, plat.libelle, commande.quantite, commande.total, date_format(commande.date_commande, "%d %b %Y") AS "date_commande" from commande join plat on commande.id_plat = plat.id where commande.email_client ="'. $email .'";');
     $requete->execute();
     $vos_commande = $requete->fetchAll(PDO::FETCH_OBJ);
     $requete->closeCursor();
@@ -37,7 +37,24 @@
     <a id="btn_modif_compte" href="#">Modifier vos informations</a>
 </div>
 
-<div id="vos_commandes">
-    <h1 id="titre_vos_commandes">Vos Commandes</h1>
+<h1 id="titre_vos_commandes">Vos Commandes</h1>
 
+<div id="vos_commandes">
+    <?php foreach($vos_commande as $commande): ?>
+        <table class="table_vos_commandes">
+            <thead class="td_img_vos_commandes">
+                <tr class="td_img_vos_commandes">
+                    <td class="td_img_vos_commandes"><img class="img_vos_commandes" src="/ASSET/img/images_the_district/food/<?= $commande->image ?>" alt="plat"></td>
+                </tr>
+            </thead>
+            <tbody class="tbody_vos_commandes">
+                <tr class="tr_vos_commandes">
+                    <td class="td_vos_commandes vos_commandes_libelle"><?= $commande->libelle ?></td>
+                    <td class="td_vos_commandes">Le <?= $commande->date_commande ?></td>
+                    <td class="td_vos_commandes">Quantité: <?= $commande->quantite ?></td>
+                    <td class="td_vos_commandes">Prix total: <?= $commande->total ?>€</td>
+                </tr>
+            </tbody>
+        </table>
+    <?php endforeach; ?>
 </div>
