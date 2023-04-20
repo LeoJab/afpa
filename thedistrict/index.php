@@ -21,6 +21,21 @@ if(isset($_GET['page']) && $_GET['page']=='acceuil') {
     include("CONTENT/thedistrict/inscription.php");
 } else if(isset($_GET['page']) && $_GET['page']=='compte') {
     include("CONTENT/thedistrict/mon_compte.php");
+} else if(isset($_GET['page']) && $_GET['page']=='admin') {
+    include("CONTENT/thedistrict/admin.php");
+} else
+
+// ADMIN
+if(isset($_GET['admin']) && $_GET['admin']=='stats') {
+    include("CONTENT/admin/stats.php");
+} else if(isset($_GET['admin']) && $_GET['admin']=='utilisateur') {
+    include("CONTENT/admin/utilisateurs.php");
+} else if(isset($_GET['admin']) && $_GET['admin']=='categorie') {
+    include("CONTENT/admin/categorie.php");
+} else if(isset($_GET['admin']) && $_GET['admin']=='plat') {
+    include("CONTENT/admin/plat.php");
+} else if(isset($_GET['admin']) && $_GET['admin']=='accueil') {
+    include("CONTENT/admin/accueil.php");
 } else
 
 // ERREURS

@@ -74,6 +74,9 @@ session_start();
     <div id="nav_menu_connecte" class="nav_menu_connecte_none">
         <div id="menu_connecte">
             <a class="a_menu_connecte" href="index.php?page=compte">Mon compte</a>
+            <?php if($_SESSION['email'] == 'admin@admin.fr'){ ?>
+                <a class="a_menu_connecte" href="index.php?admin=stats">Administrateur</a>
+            <?php } ?>
         </div>
     </div>
 </nav>
