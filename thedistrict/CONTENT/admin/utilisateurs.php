@@ -10,6 +10,10 @@
     require "db.php";
     $db = connexionBase();
 
+    /* TOUS LES UTILISATEURS */
+    $requete = $db->query("SELECT nom, prenom, numero, email FROM utilisateur");
+    $AllUtilisateurs = $requete->fetchAll(PDO::FETCH_ASSOC);
+    $requete->closeCursor();
 ?>
 
     <div id="fond_banniere_recherche">
@@ -31,6 +35,29 @@
     </div>
 
     <div id="page_stats">
-        
+        <h1>Utilisateurs</h1>
+
+        <table id="table_admin_uti">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Numero</th>
+                    <th>E-mail</th>
+                    <th>Supprimer</th>
+                </tr>
+            </thead>
+            <tbody id="tbody_admin_uti">
+                <?php foreach($AllUtilisateurs as $utilisateurs): ?>
+                        <tr class="tr_admin_uti">
+                            <td class="td_admin_uti"><?= $utilisateurs["nom"] ?></td>
+                            <td class="td_admin_uti"><?= $utilisateurs["prenom"] ?></td>
+                            <td class="td_admin_uti"><?= $utilisateurs["numero"] ?></td>
+                            <td class="td_admin_uti"><?= $utilisateurs["email"] ?></td>
+                            <td class="td_admin_uti"><a class="btn_delete_uti" href="index.php?page=#"><i class="fa-light fa-x" style="color: #2b2c34;"></i></a></td>
+                        </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
     </div>
 </div>

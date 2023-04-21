@@ -1,4 +1,4 @@
-Responsive: erreur_champ, erreur_email, erreur_mdp, erreur_connexion, inscription, connexion, interface connecté(icon + menu), mon compte;
+Responsive: erreur_champ, erreur_email, erreur_mdp, erreur_connexion, inscription, connexion, interface connecté(icon + menu), mon compte, page introuvable;
 
 Interface admin
 Envoie de mail

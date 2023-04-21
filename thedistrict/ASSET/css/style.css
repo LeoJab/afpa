@@ -884,7 +884,27 @@ body {
     font-size: 28px;
 }
 
-/* PAGE ADMIN */
+/* PAGE ADMIN UTILISATEURS */
+#table_admin_uti {
+    border-spacing: 4px;
+}
+
+#tbody_admin_uti {
+    display: table-caption;
+}
+
+.tr_admin_uti {
+
+}
+
+.btn_delete_uti {
+    text-decoration: none;
+    background-color: rgb(235, 0, 0);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* PAGE ADMIN STATISTIQUE */
 #page_admin {
     display: flex;
     flex-wrap: wrap;
@@ -975,6 +995,8 @@ body {
     border-bottom: #A1A1A1 1px solid;
     padding: 6%;
 }
+
+
 
 /* ERREURS */
 #erreur_champ {

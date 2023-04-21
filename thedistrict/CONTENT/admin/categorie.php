@@ -1,8 +1,7 @@
 <?php
     /* SESSION */
     if($_SESSION['email'] != "admin@admin.fr"){
-        header('Location: index.php?page=acceuil');
-        exit;
+        include("CONTENT/erreur/page_introuvable.php");
     } else
 
 
