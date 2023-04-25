@@ -1,10 +1,4 @@
 /* BACKGROUND */
-#background_header {
-    background-color: #00473e;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
 body {
     background-color: #f2f7f5;
 }
@@ -33,19 +27,19 @@ body {
 }
 
 #header {
+    background-color: rgba(33, 34, 38, 0.8);
+    position: absolute;
+    top: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-top: 5px;
     padding-bottom: 5px;
+    width: 100%;
 }
 
-#titre_header {
-    color: #f2f7f5;
-    border-bottom: 4px solid #f2f7f5;
-    margin: 0px;
-    margin-left: 8px;
-    cursor: default;
+.logo {
+    width: 100px;
 }
 
 #menu_nav {
@@ -60,29 +54,27 @@ body {
 }
 
 .bouton_header {
-    background-color: #f2f7f5;
     border-radius: 5px;
     cursor: pointer;
     margin-left: 4px;
     margin-right: 4px;
 }
 
-.bouton_header:hover {
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.500);
-    background-color: #e1e6e4;
-    transition: 0.5s;
+.active {
+    color: #FFFFFF !important;
+    border-bottom: 1px solid #FFFFFF;
 }
 
 .a_header {
     font-size: 28px;
-    color: #2b2c34;
+    color: #D1D1D1;
     text-decoration: none;
     padding-left: 4px;
     padding-right: 4px;
 }
 
 .a_header:hover {
-    color: #2b2c34;
+    color: #D1D1D1;
 }
 
 #login_register {
@@ -163,6 +155,11 @@ body {
     background-color: #e1e6e4;
 }
 
+.image_header {
+    position: relative;
+    top: 0;
+    width: 100%;
+}
 
 /* ACCEUIL */
 #fond_banniere_recherche {
@@ -885,16 +882,46 @@ body {
 }
 
 /* PAGE ADMIN UTILISATEURS */
+#page_stats h1 {
+    color: #2b2c34;
+    text-align: center;
+}
+
 #table_admin_uti {
-    border-spacing: 4px;
+    border-collapse: separate;
+    border-spacing: 0px 8px;
+    border: #A1A1A1 1px solid;
+    border-radius: 5px;
+    width: 90%;
+    margin-left: 5%;
 }
 
-#tbody_admin_uti {
-    display: table-caption;
+#table_admin_uti th {
+    font-size: 20px;
+    text-align: center;
+    border-bottom: #A1A1A1 1px solid;
+    padding-bottom: 8px;
 }
 
-.tr_admin_uti {
+.tr_admin_uti:nth-child(even) {
+    background-color: #e1e6e4;
+}
 
+.td_admin_uti {
+    padding: 5px 0px 5px 0px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.btn_admin_uti {
+    display: flex;
+}
+
+.btn_modifier_uti {
+    text-decoration: none;
+    background-color: rgb(0, 141, 235);
+    border-radius: 5px;
+    padding: 10px;
 }
 
 .btn_delete_uti {

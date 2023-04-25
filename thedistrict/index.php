@@ -36,6 +36,8 @@ if(isset($_GET['admin']) && $_GET['admin']=='stats') {
     include("CONTENT/admin/plat.php");
 } else if(isset($_GET['admin']) && $_GET['admin']=='accueil') {
     include("CONTENT/admin/accueil.php");
+} else if(isset($_GET['admin']) && $_GET['admin']=='modif_uti') {
+    include("CONTENT/admin/modif_uti.php");
 } else
 
 // ERREURS

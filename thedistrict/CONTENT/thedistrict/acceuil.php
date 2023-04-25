@@ -2,16 +2,15 @@
 require "db.php";
 $db = ConnexionBase();
 
-$requete1 = $db->query("SELECT * FROM categorie where active = 'yes' order by libelle");
+$requete1 = $db->query("SELECT * FROM categorie where active = 'yes' order by libelle limit 5");
 $MyCategorie = $requete1->fetchAll(PDO::FETCH_OBJ);
 $requete1->closeCursor();
 
-$requete2 = $db->query("SELECT * FROM plat order by id limit 4");
+$requete2 = $db->query("SELECT * FROM plat order by id limit 3");
 $MyPlat = $requete2->fetchAll(PDO::FETCH_OBJ);
 $requete2->closeCursor();
 ?>
 
-<h1 id="titre_acceuil">Accueil</h1>
 
 <h2 id="titre_categorie_acceuil">Catégories</h2>
 

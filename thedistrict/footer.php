@@ -13,4 +13,6 @@
 
     </footer>
 
+    <script src="/ASSET/js/main.js"></script>
+
 </html>

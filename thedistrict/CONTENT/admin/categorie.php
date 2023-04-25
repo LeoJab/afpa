@@ -30,6 +30,7 @@
     </div>
 
     <div id="page_stats">
+        <i class="fa-solid fa-lock"></i>
         
     </div>
 </div>

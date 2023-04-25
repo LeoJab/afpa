@@ -11,7 +11,7 @@
     $db = connexionBase();
 
     /* TOUS LES UTILISATEURS */
-    $requete = $db->query("SELECT nom, prenom, numero, email FROM utilisateur");
+    $requete = $db->query("SELECT * FROM utilisateur");
     $AllUtilisateurs = $requete->fetchAll(PDO::FETCH_ASSOC);
     $requete->closeCursor();
 ?>
@@ -44,7 +44,8 @@
                     <th>Prenom</th>
                     <th>Numero</th>
                     <th>E-mail</th>
-                    <th>Supprimer</th>
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody id="tbody_admin_uti">
@@ -54,7 +55,10 @@
                             <td class="td_admin_uti"><?= $utilisateurs["prenom"] ?></td>
                             <td class="td_admin_uti"><?= $utilisateurs["numero"] ?></td>
                             <td class="td_admin_uti"><?= $utilisateurs["email"] ?></td>
-                            <td class="td_admin_uti"><a class="btn_delete_uti" href="index.php?page=#"><i class="fa-light fa-x" style="color: #2b2c34;"></i></a></td>
+                            <div class="btn_admin_uti">
+                                <td class=""><a class="btn_modifier_uti" href="index.php?admin=modif_uti&id=<?= $utilisateurs["id"] ?>"><i class="fa-solid fa-pen" style="color: #2b2c34;"></i></a></td>
+                                <td class=""><a class="btn_delete_uti" href="index.php?page=#"><i class="fa-solid fa-x" style="color: #2b2c34;"></i></a></td>
+                            </div>
                         </tr>
                 <?php endforeach; ?>
             </tbody>

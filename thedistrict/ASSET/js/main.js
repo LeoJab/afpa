@@ -27,3 +27,8 @@ function menu_connecte() {
         document.getElementById("nav_menu_connecte").className = 'nav_menu_connecte_none';
     }
 }
+
+const iconLock = document.addEventListener("click", function(){
+    iconLock.classList.toggle('fa-lock');
+    iconLock.classList.toggle('fa-lock-open');
+});

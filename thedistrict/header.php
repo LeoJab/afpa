@@ -11,27 +11,27 @@ session_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link href="/ASSET/css/style.css" rel="stylesheet">
-    <script src="/ASSET/js/main.js"></script>
     <title>The District</title>
 </head>
 
 <header id="background_header">
+<img class="image_header" src="/ASSET/img/images_the_district/fosyyyy.jpg" alt="image_plat">
     <div id="header">
-        <h1 id="titre_header">The District</h1>
+        <img class="logo" src="/ASSET/img/images_the_district/the_district_brand/logo_transparent.png" alt="logo">
 
         <div id="menu_nav">
             <ul id="ul_header">
-                <li class="bouton_header"> <a class="a_header" href="index.php?page=acceuil">Accueil</a> </li>
-                <li class="bouton_header"> <a class="a_header" href="index.php?page=categorie">Catégories</a></li>
-                <li class="bouton_header"> <a class="a_header" href="index.php?page=plat">Plats</a></li>
-                <li class="bouton_header"> <a class="a_header" href="index.php?page=contact">Contact</a></li>
+                <li class="bouton_header"> <a class="a_header active" href="index.php?page=acceuil">ACCUEIL</a> </li>
+                <li class="bouton_header"> <a class="a_header" href="index.php?page=categorie">CATÉGORIES</a></li>
+                <li class="bouton_header"> <a class="a_header" href="index.php?page=plat">PLATS</a></li>
+                <li class="bouton_header"> <a class="a_header" href="index.php?page=contact">CONTACT</a></li>
             </ul>
         </div>
 
         <?php if($_SESSION == NULL){ ?>
             <div id="login_register">
-                    <a class="log a_header_log" href="index.php?page=connexion">Connexion</a>
-                    <a class="log a_header_log" href="index.php?page=inscription">Inscription</a>
+                    <a class="log a_header_log" href="index.php?page=connexion">CONNEXION</a>
+                    <a class="log a_header_log" href="index.php?page=inscription">INSCRIPTION</a>
             </div>
         <?php } else{?>
             <div id="log_connecte">
