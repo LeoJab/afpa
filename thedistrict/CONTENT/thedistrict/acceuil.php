@@ -11,16 +11,19 @@ $MyPlat = $requete2->fetchAll(PDO::FETCH_OBJ);
 $requete2->closeCursor();
 ?>
 
-
-<h2 id="titre_categorie_acceuil">Catégories</h2>
-
 <div id="categorie_acceuil">
+    <div class="titre_cate_acceuil card_cate_accueil">
+        <h1>Catégories</h1>
+        <p>Retrouvez toutes les catégories en cliquant sur le bouton ci-dessous</p>
+        <a href="index.php?page=categorie">CATÉGORIES</a>
+    </div>
+
     <?php foreach($MyCategorie as $categorie): ?>
         <a class="lien_categorie_accceuil" href="index.php?page=<?= $categorie->libelle ?>">
-            <table class="table_categorie_acceuil">
+            <table class="table_categorie_acceuil card_cate_accueil">
                 <thead>
                     <tr>
-                        <td><img class="image_categorie_acceuil" src="/ASSET/img/images_the_district/category/<?= $categorie->image ?>" alt="image_plat"></td>
+                        <td><img src="/ASSET/img/images_the_district/category/<?= $categorie->image ?>" alt="image_plat"></td>
                     </tr>
                 </thead>
                 <tbody>

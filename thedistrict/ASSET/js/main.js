@@ -1,34 +1,15 @@
-﻿function header_responsive() {
-    var nav_responsive_header = document.getElementById("nav_responsive_header_id").className;
+﻿const menu_nav_uti = document.querySelector('.menu_nav_uti');
+console.log(menu_nav_uti);
 
-    if(nav_responsive_header != "nav_responsive_header") {
-        document.getElementById("nav_responsive_header_id").className = 'nav_responsive_header';
+const icon_user = document.querySelector('.icon_user');
+console.log(icon_user);
+
+icon_user.addEventListener("click", function(){
+    if(menu_nav_uti.classList.contains('none')) {
+        menu_nav_uti.classList.toggle('none');
+        menu_nav_uti.classList.toggle('block');
     } else {
-        document.getElementById("nav_responsive_header_id").className = 'nav_responsive_header_none';
+        menu_nav_uti.classList.toggle('block');
+        menu_nav_uti.classList.toggle('none');
     }
-}
-
-function header_responsive_tab_ver() {
-    var nav_responsive_header = document.getElementById("nav_responsive_tab_ver_header_id").className;
-
-    if(nav_responsive_header != "nav_responsive_tab_ver_header") {
-        document.getElementById("nav_responsive_tab_ver_header_id").className = 'nav_responsive_tab_ver_header';
-    } else {
-        document.getElementById("nav_responsive_tab_ver_header_id").className = 'nav_responsive_tab_ver_header_none';
-    }
-}
-
-function menu_connecte() {
-    var menu_connecte = document.getElementById("nav_menu_connecte").className;
-
-    if(menu_connecte != "nav_menu_connecte_block") {
-        document.getElementById("nav_menu_connecte").className = 'nav_menu_connecte_block';
-    } else {
-        document.getElementById("nav_menu_connecte").className = 'nav_menu_connecte_none';
-    }
-}
-
-const iconLock = document.addEventListener("click", function(){
-    iconLock.classList.toggle('fa-lock');
-    iconLock.classList.toggle('fa-lock-open');
-});
+})

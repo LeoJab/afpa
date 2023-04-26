@@ -4,7 +4,6 @@ include("header.php");
 
 <?php
 if(isset($_GET['page']) && $_GET['page']=='acceuil') {
-    include("CONTENT/thedistrict/banniere.php");
     include("CONTENT/thedistrict/acceuil.php");
 } else if(isset($_GET["page"]) && $_GET["page"]=='categorie') {
     include("CONTENT/thedistrict/banniere.php");
