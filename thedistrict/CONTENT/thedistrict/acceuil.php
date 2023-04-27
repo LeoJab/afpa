@@ -23,12 +23,13 @@ $requete2->closeCursor();
             <table class="table_categorie_acceuil card_cate_accueil">
                 <thead>
                     <tr>
-                        <td><img src="/ASSET/img/images_the_district/category/<?= $categorie->image ?>" alt="image_plat"></td>
+                        <th><img src="/ASSET/img/images_the_district/category/<?= $categorie->image ?>" alt="image_plat"></th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="tbody_cate_accueil">
                     <tr>
                         <td class="libelle_categorie_acceuil"><?= $categorie->libelle ?></td>
+                        <td class="barre_liebelle_accueil"></td>
                     </tr>
                 </tbody>
             </table>
@@ -36,23 +37,57 @@ $requete2->closeCursor();
     <?php endforeach; ?>
 </div>
 
-<h2 id="titre_plat_acceuil">Plats</h2>
+<div class="horaire">
+    <div class="img_horaire"></div>
+    <div class="jour_heure">
+        <h2>Horaire</h2>
+        <div class="list_horaire">
+            <ul class="jours">
+                <li>Lundi</li>
+                <li>Mardi</li>
+                <li>Mercredi</li>
+                <li>Jeudi</li>
+                <li>Vendredi</li>
+                <li>Samedi</li>
+                <li>Dimanche</li>
+            </ul>
+            <ul class="heure">
+                <li>12h-14h, 19h-22h</li>
+                <li>12h-14h, 19h-22h</li>
+                <li>12h-14h, 19h-22h</li>
+                <li>12h-14h, 19h-22h</li>
+                <li>12h-14h, 19h-22h</li>
+                <li>fermé, 19h-22h</li>
+                <li>fermé, fermé</li>
+            </ul>
+        </div>
+    </div>
+</div>
 
-<div id="plat_acceuil">
-    <?php foreach($MyPlat as $plat): ?>
-        <a class="lien_plat_accceuil" href="index.php?page=plat">
-            <table class="table_plat_acceuil">
-                <thead>
-                    <tr>
-                        <td><img class="image_plat_acceuil" src="/ASSET/img/images_the_district/food/<?= $plat->image ?>" alt="image_plat"></td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="libelle_plat_acceuil"><?= $plat->libelle ?></td>
-                    </tr>
-                </tbody>
-            </table>
-        </a>
-    <?php endforeach; ?>
+<div class="fond_plat_acc">
+    <div id="plat_acceuil">
+        <?php foreach($MyPlat as $plat): ?>
+            <a class="lien_plat_acceuil" href="index.php?page=plat">
+                <table class="table_plat_acceuil card_plat_acceuil">
+                    <thead>
+                        <tr>
+                            <th><img class="image_plat_acceuil" src="/ASSET/img/images_the_district/food/<?= $plat->image ?>" alt="image_plat"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="tbody_plat_acc">
+                        <tr>
+                            <td class="libelle_plat_acc"><?= $plat->libelle ?></td>
+                            <td class="fond_libelle"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </a>
+        <?php endforeach; ?>
+    </div>
+
+    <div class="">
+        <h1>PLAT</h1>
+        <p>Retrouvez tous nos plas disponibles en cliquant sur le bouton ci-dessous</p>
+        <a href="index.php?page=plat">PLAT</a>
+    </div>
 </div>
