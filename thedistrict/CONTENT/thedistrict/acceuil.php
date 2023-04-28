@@ -6,7 +6,7 @@ $requete1 = $db->query("SELECT * FROM categorie where active = 'yes' order by li
 $MyCategorie = $requete1->fetchAll(PDO::FETCH_OBJ);
 $requete1->closeCursor();
 
-$requete2 = $db->query("SELECT * FROM plat order by id limit 3");
+$requete2 = $db->query("SELECT * FROM plat order by id limit 4");
 $MyPlat = $requete2->fetchAll(PDO::FETCH_OBJ);
 $requete2->closeCursor();
 ?>
@@ -85,9 +85,33 @@ $requete2->closeCursor();
         <?php endforeach; ?>
     </div>
 
-    <div class="">
-        <h1>PLAT</h1>
+    <div class="titre_plat_acc">
+        <h1>Plats</h1>
         <p>Retrouvez tous nos plas disponibles en cliquant sur le bouton ci-dessous</p>
-        <a href="index.php?page=plat">PLAT</a>
+        <a href="index.php?page=plat">PLATS</a>
+    </div>
+</div>
+
+<div class="info_acc">
+    <div class="card_info">
+        <div>
+            <i class="fa-solid fa-location-dot fa-2xl" style="color: #212226;"></i>
+            <h6>Où nous trouver ?</h6>
+        </div>
+        <p>34 Rue Beaurepaire 75010 Paris</p>
+    </div>
+    <div class="card_info">
+        <div>
+            <i class="fa-solid fa-phone fa-2xl" style="color: #212226;"></i>
+            <h6>Nous contacter</h6>
+        </div>
+        <p>09 56 84 75 25</p>
+    </div>
+    <div class="card_info">
+        <div>
+            <i class="fa-solid fa-envelope fa-2xl" style="color: #212226;"></i>
+            <h6>Notre mail</h6>
+        </div>
+        <p>thedistrict@gmail.com</p>
     </div>
 </div>

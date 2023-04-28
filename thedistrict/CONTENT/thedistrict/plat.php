@@ -1,23 +1,28 @@
 <?php
+include("db.php");
+$db = connexionBase();
 //Plat
 $requete3 = $db->query("SELECT * FROM plat where active = 'yes'");
 $MyPlatAllActive = $requete3->fetchAll(PDO::FETCH_OBJ);
 $requete3->closeCursor();
 ?>
 
-<div id="cate_all_plat">
-    <h2 class="titre_categorie_plat">Tous les plats</h2>
+<div id="fond_plat">
+    <h2 class="titre_categorie_plat">TOUS LES PLATS</h2>
     <div id="plat">
         <?php foreach($MyPlatAllActive as $plat_act): ?>
-            <table class="table_plat">
+            <div>
+            <table class="table_plat card_plat">
                 <thead>
                     <tr>
-                        <td><img class="image_plat" src="/ASSET/img/images_the_district/food/<?= $plat_act->image ?>" alt="nourriture"></td>
+                        <td><img class="image_plat card_plat" src="/ASSET/img/images_the_district/food/<?= $plat_act->image ?>" alt="nourriture"></td>
                     </tr>
                 </thead>
                 <tbody class="tbody_all_plat">
                     <tr>
                         <td class="libelle_plat"><?= $plat_act->libelle ?></td>
+                    </tr>
+                    <tr class="plat_description">
                         <td class="desc_plat"><?= $plat_act->description ?></td>
                         <tr class="plat_prix_icon">
                             <td class="prix_plat"><?= $plat_act->prix ?>€</td>
@@ -26,6 +31,7 @@ $requete3->closeCursor();
                     </tr>
                 </tbody>
             </table>
+            </div>
         <?php endforeach ?>
     </div>
 </div>

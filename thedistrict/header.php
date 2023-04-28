@@ -23,10 +23,10 @@ session_start();
     <input id="barre_recherche" name="recherche" type="search" placeholder="Rechercher.." aria-label="Search" autocomplete="off">
 </form>
 <div class="rs">
-    <button><i class="fa-brands fa-facebook fa-2xl" style="color: #ffc453;"></i></button>
-    <button><i class="fa-brands fa-twitter fa-2xl" style="color: #ffc453;"></i></button>
-    <button><i class="fa-brands fa-tiktok fa-2xl" style="color: #ffc453;"></i></button>
-    <button><i class="fa-brands fa-instagram fa-2xl" style="color: #ffc453;"></i></button>
+    <a href="#"><button><i class="fa-brands fa-facebook fa-2xl" style="color: #212226;"></i></button></a>
+    <a href="#"><button><i class="fa-brands fa-twitter fa-2xl" style="color: #212226;"></i></button></a>
+    <a href="#"><button><i class="fa-brands fa-tiktok fa-2xl" style="color: #212226;"></i></button></a>
+    <a href="#"><button><i class="fa-brands fa-instagram fa-2xl" style="color: #212226;"></i></button></a>
 </div>
 
     <div id="header">

@@ -6,11 +6,8 @@ include("header.php");
 if(isset($_GET['page']) && $_GET['page']=='acceuil') {
     include("CONTENT/thedistrict/acceuil.php");
 } else if(isset($_GET["page"]) && $_GET["page"]=='categorie') {
-    include("CONTENT/thedistrict/banniere.php");
     include("CONTENT/thedistrict/categorie.php");
 } else if(isset($_GET['page']) && $_GET['page']=='plat') {
-    include("CONTENT/thedistrict/banniere.php");
-    include("CONTENT/thedistrict/interface_plat.php");
     include("CONTENT/thedistrict/plat.php");
 } else if(isset($_GET['page']) && $_GET['page']=='contact') {
     include("CONTENT/thedistrict/contact.php");
