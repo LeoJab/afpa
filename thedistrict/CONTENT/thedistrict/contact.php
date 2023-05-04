@@ -1,25 +1,16 @@
-<div id="fond_banniere_recherche">
-    <div id="banniere_recherche_solo">
-        <img id="logo_acceuil" src="/ASSET/img/images_the_district/the_district_brand/logo_transparent.png" alt="banniere">
-        
-    </div>
-</div>
+<div class="fond_page_contact">
+    <h1 id="titre_contact">CONTACTEZ-NOUS</h1>
+    <div id="fond_contact">
+        <form id="form_contact" action="">
+            <input class="input_contact" type="text" name="nom" placeholder="Votre Nom..">
 
-<div id="fond_contact">
-    <h1 id="titre_contact">Prendre Contact</h1>
+            <input class="input_contact" type="mail" name="email" placeholder="Votre E-mail..">
 
-    <form id="form_contact" action="">
-        <input class="input_contact" type="text" name="nom" placeholder="Votre Nom">
+            <input class="input_contact" type="text" name="phone" placeholder="Votre Numéro de Téléphone..">
 
-        <input class="input_contact" type="mail" name="email" placeholder="Votre E-mail">
+            <input class="input_contact" id="commentaire" type="text" name="commentaire" placeholder="Commentaire..">
 
-        <input class="input_contact" type="text" name="phone" placeholder="Votre Numéro de Téléphone">
-
-        <input class="input_contact" id="commentaire" type="text" name="commentaire" placeholder="Commentaire">
-
-        <div id="btn_form">
             <input class="btn_contact" type="submit" value="Envoyer">
-            <input class="btn_contact" type="reset" value="Annuler">
-        </div>
-    </form>
+        </form>
+    </div>
 </div>

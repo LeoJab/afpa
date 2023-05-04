@@ -18,7 +18,9 @@ if(isset($_GET['page']) && $_GET['page']=='acceuil') {
 } else if(isset($_GET['page']) && $_GET['page']=='compte') {
     include("CONTENT/thedistrict/mon_compte.php");
 } else if(isset($_GET['page']) && $_GET['page']=='admin') {
-    include("CONTENT/thedistrict/admin.php");
+    include("CONTENT/admin/accueil.php");
+} else if(isset($_GET['page']) && $_GET['page']=='deconnexion') {
+    include("CONTENT/script/script_deconnexion.php");
 } else
 
 // ADMIN
@@ -32,6 +34,8 @@ if(isset($_GET['admin']) && $_GET['admin']=='stats') {
     include("CONTENT/admin/plat.php");
 } else if(isset($_GET['admin']) && $_GET['admin']=='accueil') {
     include("CONTENT/admin/accueil.php");
+} else if(isset($_GET['admin']) && $_GET['admin']=='commande') {
+    include("CONTENT/admin/commande.php");
 } else if(isset($_GET['admin']) && $_GET['admin']=='modif_uti') {
     include("CONTENT/admin/modif_uti.php");
 } else

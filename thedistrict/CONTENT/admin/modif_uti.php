@@ -8,28 +8,34 @@
     $requete->closeCursor();
 ?>
 
-<div id="fond_banniere_recherche">
-    <div id="banniere_recherche_solo">
-        <img id="logo_acceuil" src="/ASSET/img/images_the_district/the_district_brand/logo_transparent.png" alt="banniere">
-        
+<div id="page_admin">
+    <div id="menu_admin">
+        <ul id="ul_admin">
+            <a class="a_cate_admin" href="index.php?admin=accueil"><li class="li_admin">Accueil</li></a>
+            <a class="a_cate_admin" href="index.php?admin=plat"><li class="li_admin">Plats</li></a>
+            <a class="a_cate_admin" href="index.php?admin=categorie"><li class="li_admin">Catégories</li></a>
+            <a class="a_cate_admin select" href="index.php?admin=utilisateur"><li class="li_admin">Utilisateurs</li></a>
+            <a class="a_cate_admin" href="index.php?admin=commande"><li class="li_admin">Commandes</li></a>
+            <a class="a_cate_admin" href="index.php?admin=stats"><li class="li_admin">Statistiques</li></a>
+        </ul>
     </div>
-</div>
 
-<div id="">
-    <form action="/CONTENT/script/script_modif.php?id=<?= $id ?>">
-        <div id="">
-            <?php foreach($info_utilisateur as $utilisateur): ?>
-                <label class="label_admin_compte" for="nom">Nom</label>
-                <input class="input_admin_compte" type="text" name="nom" value="<?= $utilisateur->nom ?>">
-                <label class="label_admin_compte" for="prenom">Prenom</label>
-                <input class="input_admin_compte" type="text" name="prenom" value="<?= $utilisateur->prenom ?>">
-                <label class="label_admin_compte" for="email">E-mail</label>
-                <input class="input_admin_compte" type="text" name="email" value="<?= $utilisateur->email ?>">
-                <label class="label_admin_compte" for="numero">Numéro</label>
-                <input class="input_admin_compte" type="text" name="numero" value="<?= $utilisateur->numero ?>">
-            <?php endforeach; ?>
-        </div>
-        <input type="submit" value="Modifier">
-        <a href="index.php?admin=utilisateur">Retour</a>
-    </form>
+    <div id="page_stats">
+        <form action="/CONTENT/script/script_modif.php?id=<?= $id ?>">
+            <div id="">
+                <?php foreach($info_utilisateur as $utilisateur): ?>
+                    <label class="label_admin_compte" for="nom">Nom</label>
+                    <input class="input_admin_compte" type="text" name="nom" value="<?= $utilisateur->nom ?>">
+                    <label class="label_admin_compte" for="prenom">Prenom</label>
+                    <input class="input_admin_compte" type="text" name="prenom" value="<?= $utilisateur->prenom ?>">
+                    <label class="label_admin_compte" for="email">E-mail</label>
+                    <input class="input_admin_compte" type="text" name="email" value="<?= $utilisateur->email ?>">
+                    <label class="label_admin_compte" for="numero">Numéro</label>
+                    <input class="input_admin_compte" type="text" name="numero" value="<?= $utilisateur->numero ?>">
+                <?php endforeach; ?>
+            </div>
+            <input type="submit" value="Modifier">
+        </form>
+        <a href="index.php?admin=utilisateur"> <i class="fa-solid fa-arrow-left fa-2xl" style="color: #ffc453;"></i> Retour</a>
+    </div>
 </div>

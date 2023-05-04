@@ -101,8 +101,8 @@
 
 .rs {
     position: absolute;
-    top: 775px;
-    right: 75px;
+    top: 77.5%;
+    right: 5%;
 }
 
 .rs button {
@@ -182,7 +182,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    background-image: linear-gradient(rgba(255, 196, 83, 0.9), rgba(255, 196, 83, 0.9)), url("../../../ASSET/img/images_the_district/ibg.jpg");
+    background-image: linear-gradient(rgba(255, 196, 83, 0.8), rgba(255, 196, 83, 0.8)), url("../../../ASSET/img/images_the_district/ibg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     padding: 5%;
@@ -369,7 +369,7 @@
 }
 
 .fond_plat_acc {
-    background-image: linear-gradient(rgba(255, 196, 83, 0.9), rgba(255, 196, 83, 0.9)), url("../../../ASSET/img/images_the_district/bg3.jpeg");
+    background-image: linear-gradient(rgba(255, 196, 83, 0.8), rgba(255, 196, 83, 0.8)), url("../../ASSET/img/images_the_district/bg3_reverse.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: 2.5%;
@@ -729,8 +729,13 @@
     font-weight: lighter;
     letter-spacing: 20px;
     border-bottom: 2px solid #212226;
-    margin: 0 5% 0 5%;
+    margin: 0 25% 0 25%;
     padding-bottom: 10px;
+}
+
+.card_plat {
+    width: 400px;
+    height: 400px;
 }
 
 #plat {
@@ -742,39 +747,54 @@
 }
 
 .table_plat {
-    width: 400px;
-    height: 600px;
+    height: 500px;
     display: flex;
     flex-direction: column;
+    margin: 15px 0 15px 0;
+}
+
+.table_plat thead{
+    overflow: hidden;
+    height: 400px;
 }
 
 .image_plat {
-    width: 400px;
-    height: 400px;
     border-radius: 100px 100px 0 0;
 }
 
-.tbody_plat {
-    display: flex;
-    flex-direction: column;
-}
-
 .libelle_plat {
+    position: relative;
+    top: -380px;
+    opacity: 0%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    text-align: center;
     color: #f2f7f5;
-    font-size: 24px;
+    font-size: 40px;
+    width: 400px;
+    height: 100%;
 }
 
 .plat_description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: #212226;
     border-radius: 0 0 100px 100px;
+    height: 45%;
+    overflow: hidden;
 }
 
 .desc_plat {
     display: flex;
+    text-align: center;
     color: #f2f7f5;
-    white-space: pre-wrap;
+}
+
+.plat_prix_icon i {
+    margin-right: 10px;
 }
 
 .plat_prix_icon {
@@ -782,10 +802,9 @@
     justify-content: center;
     align-items: center;
     background-color: #f2f7f5;
-    border-radius: 10px;
-    margin-left: 25%;
-    margin-right: 25%;
-    margin-top: 8px;
+    border-radius: 25px;
+    margin: 8px 25% 0 25%;
+    padding: 0 15px 0 15px;
 }
 
 .plat_prix_icon:hover {
@@ -794,11 +813,39 @@
 }
 
 .prix_plat {
-    font-size: 24px;
+    font-size: 26px;
+    font-weight: normal;
 }
 
-.icon_shop {
-    margin-left: 6px;
+.table_plat:hover .libelle_plat {
+    animation-name: libelle_plat;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.table_plat:hover .image_plat {
+    animation-name: image_plat;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes libelle_plat {
+    from {
+        top: -380px;
+        opacity: 0%;
+    } to {
+        top: -400px;
+        opacity: 100%;
+        letter-spacing: 5px;
+    }
+}
+
+@keyframes image_plat {
+    from {
+        filter: grayscale(0);
+    } to {
+        filter: grayscale(0.5);
+    }
 }
 
 #plat_introuvable {
@@ -830,21 +877,35 @@
 }
 
 /* CONTACT */
+.fond_page_contact {
+    background-image: linear-gradient(rgba(255, 196, 83, 0.8), rgba(255, 196, 83, 0.8)), url("../../ASSET/img/images_the_district/pexels-valeria-boltneva-1332275.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+    padding-top: 4%;
+    padding-bottom: 8%;
+}
+
 #fond_contact {
-    background-color: #00473e;
-    margin-top: 8%;
-    margin-bottom: 9%;
-    margin-left: 25%;
-    margin-right: 25%;
+    background-image: linear-gradient(rgba(33, 34, 38, 0.8), rgba(33, 34, 38, 0.8)), url("../../ASSET/img/images_the_district/bg3.jpg");;
+    margin-left: 15%;
+    margin-right: 15%;
     padding-top: 15px;
     padding-bottom: 15px;
+    border-radius: 100px;
 }
 
 #titre_contact {
-    display: flex;
-    justify-content: center;
-    color: #f2f7f5;
-    font-size: 56px;
+    color: #212226;
+    text-align: center;
+    font-size: 64px;
+    font-weight: lighter;
+    letter-spacing: 20px;
+    border-bottom: 2px solid #212226;
+    margin-bottom: 2%;
+    margin: 0 25% 4% 25%;
+    padding-bottom: 10px;
 }
 
 #form_contact {
@@ -858,11 +919,12 @@
     display: flex;
     border-radius: 5px;
     border: 1px solid #2b2c34;
-    width: 50%;
-    margin-top: 4px;
-    margin-bottom: 4px;
-    padding: 5px;
+    width: 90%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 15px 5px 15px 5px;
     font-size: 18px;
+    border-radius: 50px;
 }
 
 #commentaire {
@@ -875,14 +937,15 @@
 }
 
 .btn_contact {
-    background-color: #f2f7f5;
-    color: #2b2c34;
-    border: 0px solid #2b2c34;
-    border-radius: 5px;
-    font-size: 24px;
-    margin: 2px;
-    margin-top: 16px;
-    margin-bottom: 16px;
+    background-color: #FFC453;
+    color: #000000;
+    border: none;
+    border-radius: 25px;
+    font-size: 44px;
+    margin: 16px 0 16px 0;
+    padding: 1% 10% 1% 10%;
+    letter-spacing: 10px;
+    font-weight: lighter;
 }
 
 /* FOOTER */
@@ -1128,30 +1191,60 @@
     font-size: 28px;
 }
 
+/* PAGE ADMIN PLATS */
+.admin_table_plat {
+    background-color: #FFC453;
+    text-align: center;
+    margin: 0 2px 0 2px;
+}
+
+.admin_table_plat tr:nth-child(even) {
+    background-color: #EDB74D;
+}
+
+.admin_table_plat th {
+    font-size: 32px;
+    color: #212226;
+    font-weight: 500;
+}
+
+.admin_table_plat td {
+    font-size: 24px;
+    color: #212226;
+    font-weight: 300;
+}
+
+.admin_table_plat img {
+    width: 100px;
+    height: auto;
+}
+
 /* PAGE ADMIN UTILISATEURS */
 #page_stats h1 {
-    color: #2b2c34;
+    color: #FFFFFF;
     text-align: center;
+    font-weight: normal;
 }
 
 #table_admin_uti {
     border-collapse: separate;
-    border-spacing: 0px 8px;
+    border-spacing: 0px 5px;
     border: #A1A1A1 1px solid;
     border-radius: 5px;
     width: 90%;
     margin-left: 5%;
+    background-color: #FFC453;
 }
 
 #table_admin_uti th {
     font-size: 20px;
     text-align: center;
-    border-bottom: #A1A1A1 1px solid;
+    border-bottom: #212226 1px solid;
     padding-bottom: 8px;
 }
 
 .tr_admin_uti:nth-child(even) {
-    background-color: #e1e6e4;
+    background-color: #EDB74D;
 }
 
 .td_admin_uti {
@@ -1168,20 +1261,94 @@
     text-decoration: none;
     background-color: rgb(0, 141, 235);
     border-radius: 5px;
-    padding: 10px;
+    padding: 8px;
 }
 
 .btn_delete_uti {
     text-decoration: none;
     background-color: rgb(235, 0, 0);
     border-radius: 5px;
-    padding: 10px;
+    padding: 8px;
+}
+
+/* PAGE ADMIN CATEGORIE */
+.table_cate {
+    text-align: center;
+    background-color: #FFC453;
+}
+
+.table_cate tr:nth-child(even) {
+    background-color: #EDB74D;
+}
+
+.admin_cate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.table_cate th {
+    color: #212226;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.table_cate td {
+    color: #212226;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.table_cate img {
+    width: 100px;
+    height: auto;
+}
+
+/* PAGE ADMIN COMMANDES */
+#page_stats h2 {
+    color: #FFFFFF;
+    text-align: center;
+    margin: 1% 0 1% 0;
+}
+
+.cmd {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 2.5% 0 2.5%;
+}
+
+.table_cmd {
+    background-color: #EDB74D;
+    margin: 0 4px 0 4px;
+}
+
+.table_cmd tr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.table_cmd td {
+    font-weight: 300;
+    color: #212226;
+}
+
+.num_cmd {
+    font-weight: 500 !important;
+}
+
+.cmd_info {
+    font-weight: 500 !important;
+    border-bottom: solid 1px #212226;
 }
 
 /* PAGE ADMIN STATISTIQUE */
 #page_admin {
     display: flex;
     flex-wrap: wrap;
+    background-color: #212226;
 }
 
 #menu_admin {
@@ -1189,7 +1356,8 @@
     justify-content: center;
     width: 20%;
     height: 600px;
-    border-right: #A1A1A1 1px solid;
+    border-right: #212226 1px solid;
+    background-color: #FFC453;
     padding: 0px;
 }
 
@@ -1213,7 +1381,8 @@
 .li_admin {
     display: flex;
     justify-content: center;
-    color: #2b2c34;
+    font-weight: lighter;
+    color: #212226;
     font-size: 48px;
 }
 
@@ -1223,10 +1392,11 @@
 }
 
 #titre_statistique {
-    color: #2b2c34;
+    color: #FFFFFF;
     text-align: center;
     font-size: 42px;
     margin-bottom: 2%;
+    font-weight: normal;
 }
 
 .div_stats {
@@ -1236,7 +1406,8 @@
 }
 
 .titre_stats {
-    color: #2b2c34;
+    color: #FFFFFF;
+    font-weight: normal;
 }
 
 #statistique {
@@ -1246,7 +1417,7 @@
 }
 
 .table_stats {
-    background-color: #e1e6e4;
+    background-color: #FFC453;
     width: 375px;
     height: 350px;
     border-radius: 5px;
@@ -1255,19 +1426,22 @@
 .th_stats {
     text-align: center;
     font-size: 22px;
-    color: #2b2c34;
+    color: #212226;
+    font-weight: normal;
 }
 
 .td_stats {
     text-align: center;
     font-size: 20px;
-    color: #2b2c34;
+    color: #212226;
+    font-weight: 300;
 }
 
 .select {
     background-color: #e1e6e4;
-    border-bottom: #A1A1A1 1px solid;
+    border-bottom: #212226 1px solid;
     padding: 6%;
+    background-color: #EDB74D;
 }
 
 
