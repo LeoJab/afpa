@@ -12,7 +12,7 @@
         echo "Erreur !";
     }   else {
             // On met les types autorisés dans un tableau (ici pour une image)
-            $aMimeTypes = array("image/gif", "image/jpeg", "image/pjpeg", "image/png", "image/x-png", "image/tiff", "image/jpg");
+            $aMimeTypes = array("image/gif", "image/jpeg", "image/png", "image/x-png", "image/tiff", "image/jpg");
 
             // On extrait le type du fichier via l'extension FILE_INFO 
             $finfo = finfo_open(FILEINFO_MIME_TYPE);
