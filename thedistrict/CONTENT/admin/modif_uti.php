@@ -21,7 +21,7 @@
     </div>
 
     <div id="page_stats">
-        <form action="/CONTENT/script/script_modif.php?id=<?= $id ?>">
+        <form action="/CONTENT/script/script_modif.php?id=<?= $id ?>" method="post" enctype='multipart/form-data'>
             <div id="">
                 <?php foreach($info_utilisateur as $utilisateur): ?>
                     <label class="label_admin_compte" for="nom">Nom</label>
