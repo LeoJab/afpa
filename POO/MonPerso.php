@@ -2,7 +2,7 @@
 require_once "Personnage.class.php";
 
 $p = new Personnage();
-$p->setNom("Lebowski");
-$p->setPrenom("Jeff");
 
-echo ($p);
+$p->setNewPerso("Lebowski", "Jeff", 25, "M");
+
+$p->Afficher();
