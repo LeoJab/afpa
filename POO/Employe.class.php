@@ -23,16 +23,26 @@ class Employe {
 
     public function PrimeAnnuel() {
         $today = new DateTime();
-        $date = new DateTime($this->d_e);
+        $DateVersement = new DateTime("30-11-2000");
 
-        $stampToday = strtotime($today->format('d-m-Y'));
-        $stampDate = strtotime($date->format('d-m-Y'));
+        if($today->format('d-m') == $DateVersement->format('d-m')) {
+            $dateEmbauche = new DateTime($this->d_e);
 
-        /*echo date($stampToday);
-        echo date($stampDate);*/
-        
-        $interval = $stampDate->diff($stampToday);
-        
-        echo $interval->format('d/m/Y');
+            $stampToday = strtotime($today->format('d-m-Y'));
+            $stampDateEmbauche = strtotime($dateEmbauche->format('d-m-Y'));
+
+            $yearToday = date('Y', $stampToday);
+            $yearDateEmbauche = date('Y', $stampDateEmbauche);
+
+            $intervalDate = $yearToday - $yearDateEmbauche;
+            
+            $salaire = $this->salaire * 1000;
+            
+            $prime = ($salaire * 0.05) + (($salaire * 0.02) * $intervalDate);
+
+            echo 'Votre prime a bien été versée, pour un montant de ' . $prime . '€ <br>';
+        } else {
+            echo "La date du versement des primes pour " . $this->nom . " " . $this->prenom . " est prévus le " . $DateVersement->format('d/m') . "<br>";
+        }
     }
 }
