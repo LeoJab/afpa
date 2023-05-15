@@ -27,6 +27,7 @@
 
     <div id="page_stats" class="admin_cate">
         <h1>Categories</h1>
+        <a class="ajout_cate" href="index.php?admin=add_categorie">Ajouter</a>
         <table class="table_cate">
             <thead>
                 <tr>
@@ -44,9 +45,9 @@
                     <td><img src="ASSET/img/images_the_district/category/<?= $cate["image"] ?>" alt="<?= $cate["image"] ?>"></td>
                     <td><?= $cate["libelle"] ?></td>
                     <td><?= $cate["active"] ?></td>
-                    <div class="btn_admin_uti">
-                        <td class=""><a class="btn_modifier_uti" href="#"><i class="fa-solid fa-pen" style="color: #2b2c34;"></i></a></td>
-                        <td class=""><a class="btn_delete_uti" href="#"><i class="fa-solid fa-x" style="color: #2b2c34;"></i></a></td>
+                    <div class="btn_admin_cate">
+                        <td class=""><a class="btn_modifier_cate" href="index.php?admin=modif_categorie&id=<?= $cate["id"] ?>"><i class="fa-solid fa-pen" style="color: #2b2c34;"></i></a></td>
+                        <td class=""><a class="btn_delete_cate" href="/CONTENT/script/script_supp_cate.php?id=<?= $cate["id"] ?>"><i class="fa-solid fa-x" style="color: #2b2c34;"></i></a></td>
                     </div>
                 </tr>
             <?php endforeach; ?>

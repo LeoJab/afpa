@@ -36,6 +36,14 @@ if(isset($_GET['admin']) && $_GET['admin']=='stats') {
     include("CONTENT/admin/accueil.php");
 } else if(isset($_GET['admin']) && $_GET['admin']=='commande') {
     include("CONTENT/admin/commande.php");
+} else if(isset($_GET['admin']) && $_GET['admin']=='add_categorie') {
+    include("CONTENT/admin/add_categorie.php");
+} else if(isset($_GET['admin']) && $_GET['admin']=='add_plat') {
+    include("CONTENT/admin/add_plat.php");
+} else if(isset($_GET['admin']) && $_GET['admin']=='modif_categorie') {
+    include("CONTENT/admin/modif_categorie.php");
+} else if(isset($_GET['admin']) && $_GET['admin']=='modif_plat') {
+    include("CONTENT/admin/modif_plat.php");
 } else if(isset($_GET['admin']) && $_GET['admin']=='modif_uti') {
     include("CONTENT/admin/modif_uti.php");
 } else

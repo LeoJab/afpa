@@ -5,7 +5,7 @@
     $db = ConnexionBase();
 
     try {
-        $requete = $db->prepare("DELETE FROM utilisateur WHERE id = ?");
+        $requete = $db->prepare("DELETE FROM categorie WHERE id = ?");
         $requete->execute(array($_GET["id"]));
         $requete->execute();
         $requete->closeCursor();
@@ -14,5 +14,5 @@
         echo "Erreur : " . $requete->errorInfo()[2] . "<br>";
         die("Fin du script");
     }
-    header("Location: /index.php?admin=utilisateur");
+    header("Location: /index.php?admin=categorie");
     exit;

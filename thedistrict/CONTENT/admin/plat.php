@@ -28,6 +28,7 @@
 
     <div id="page_stats">
         <h1>Plats</h1>
+        <a class="ajout_plat" href="index.php?admin=add_plat">Ajouter</a>
         <table class="admin_table_plat">
             <thead>
                 <tr>
@@ -49,9 +50,9 @@
                         <td><?= $plat["description"] ?></td>
                         <td><?= $plat["prix"] ?></td>
                         <td><?= $plat["active"] ?></td>
-                        <div class="btn_admin_uti">
-                            <td class=""><a class="btn_modifier_uti" href="#"><i class="fa-solid fa-pen" style="color: #2b2c34;"></i></a></td>
-                            <td class=""><a class="btn_delete_uti" href="#"><i class="fa-solid fa-x" style="color: #2b2c34;"></i></a></td>
+                        <div class="btn_admin_plat">
+                            <td class=""><a class="btn_modifier_plat" href="index.php?admin=modif_plat&id=<?= $plat["id"] ?>"><i class="fa-solid fa-pen" style="color: #2b2c34;"></i></a></td>
+                            <td class=""><a class="btn_delete_plat" href="/CONTENT/script/script_supp_plat.php?id=<?= $plat["id"] ?>"><i class="fa-solid fa-x" style="color: #2b2c34;"></i></a></td>
                         </div>
                     </tr>
                 <?php endforeach; ?>

@@ -2,8 +2,15 @@
 require_once "Employe.class.php";
 require_once "Magasin.class.php";
 
+
+$magasin1 = new Magasin;
+$magasin1->SetNewMagasin('Magasin', 'Adresse du magasin', 80000, 'Amiens');
+$magasin1->AfficherMagasin();
+
 $employer1 = new Employe;
 $employer1->SetNewEmploye('Test', 'Test', "01-01-2000", 'test', 36, 'test');
+$employer1->SetEmployeMagasin($magasin1);
+$employer1->InformationEmploye();
 $employer1->PrimeAnnuel();
 
 $employer2 = new Employe;
@@ -22,6 +29,3 @@ $employer5 = new Employe;
 $employer5->SetNewEmploye('Test', 'Test', "01-01-1995", 'test', 42, 'test');
 $employer5->PrimeAnnuel();
 
-$magasin1 = new Magasin;
-$magasin1->SetNewMagasin('Magasin', 'Adresse du magasin', 80000, 'Amiens');
-$magasin1->AfficherMagasin();

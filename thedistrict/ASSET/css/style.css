@@ -1219,6 +1219,40 @@
     height: auto;
 }
 
+.ajout_plat {
+    text-decoration: none;
+    background-color: rgb(0, 141, 235);
+    border-radius: 5px;
+    padding: 8px;
+    color: #212226;
+    font-size: 24px;
+    margin-bottom: 15px;
+    transition: 0.2s;
+}
+
+.ajout_plat:hover {
+    color: #212226;
+    background-color: rgb(0, 129, 214);
+}
+
+.btn_admin_plat {
+    display: flex;
+}
+
+.btn_modifier_plat {
+    text-decoration: none;
+    background-color: rgb(0, 141, 235);
+    border-radius: 5px;
+    padding: 8px;
+}
+
+.btn_delete_plat {
+    text-decoration: none;
+    background-color: rgb(235, 0, 0);
+    border-radius: 5px;
+    padding: 8px;
+}
+
 /* PAGE ADMIN UTILISATEURS */
 #page_stats h1 {
     color: #FFFFFF;
@@ -1253,22 +1287,38 @@
     text-align: center;
 }
 
-.btn_admin_uti {
+#page_modif_uti {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.btn_modifier_uti {
-    text-decoration: none;
-    background-color: rgb(0, 141, 235);
-    border-radius: 5px;
-    padding: 8px;
+#page_modif_uti h2 {
+    color: #FFFFFF;
+    font-size: 48px;
 }
 
-.btn_delete_uti {
+#page_modif_uti form {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFC453;
+    padding: 2% 2% 2% 2%;
+}
+
+#div_form_modif_uti {
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+}
+
+#page_modif_uti a {
     text-decoration: none;
-    background-color: rgb(235, 0, 0);
-    border-radius: 5px;
-    padding: 8px;
+    color: #212226;
+    font-size: 24px;
+    background-color: #FFC453;
+    padding: 1% 1% 1% 1%;
+    border-radius: 15px;
 }
 
 /* PAGE ADMIN CATEGORIE */
@@ -1302,6 +1352,40 @@
 .table_cate img {
     width: 100px;
     height: auto;
+}
+
+.ajout_cate {
+    text-decoration: none;
+    background-color: rgb(0, 141, 235);
+    border-radius: 5px;
+    padding: 8px;
+    color: #212226;
+    font-size: 24px;
+    margin-bottom: 15px;
+    transition: 0.2s;
+}
+
+.ajout_cate:hover {
+    color: #212226;
+    background-color: rgb(0, 129, 214);
+}
+
+.btn_admin_cate {
+    display: flex;
+}
+
+.btn_modifier_cate {
+    text-decoration: none;
+    background-color: rgb(0, 141, 235);
+    border-radius: 5px;
+    padding: 8px;
+}
+
+.btn_delete_cate {
+    text-decoration: none;
+    background-color: rgb(235, 0, 0);
+    border-radius: 5px;
+    padding: 8px;
 }
 
 /* PAGE ADMIN COMMANDES */

@@ -20,9 +20,10 @@
         </ul>
     </div>
 
-    <div id="page_stats">
-        <form action="/CONTENT/script/script_modif.php?id=<?= $id ?>">
-            <div id="">
+    <div id="page_modif_uti">
+        <h2>Information Utilisateur</h2>
+        <form action="/CONTENT/script/script_modif_uti.php?id=<?= $id ?>"  method="post" enctype='multipart/form-data'>
+            <div id="div_form_modif_uti">
                 <?php foreach($info_utilisateur as $utilisateur): ?>
                     <label class="label_admin_compte" for="nom">Nom</label>
                     <input class="input_admin_compte" type="text" name="nom" value="<?= $utilisateur->nom ?>">
@@ -36,6 +37,6 @@
             </div>
             <input type="submit" value="Modifier">
         </form>
-        <a href="index.php?admin=utilisateur"> <i class="fa-solid fa-arrow-left fa-2xl" style="color: #ffc453;"></i> Retour</a>
+        <a href="index.php?admin=utilisateur"> <i class="fa-solid fa-arrow-left fa-xl" style="color: #212226;"></i> Retour</a>
     </div>
 </div>
