@@ -53,4 +53,4 @@ try {
 }
 
 header("Location: /index.php?page=plat");
-exit;
+exit;;
