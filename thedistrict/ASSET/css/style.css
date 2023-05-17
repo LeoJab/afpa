@@ -746,6 +746,12 @@
     margin: 0 5% 0 5%;
 }
 
+
+#plat a {
+    text-decoration: none;
+    color: #212226;
+}
+
 .table_plat {
     height: 500px;
     display: flex;
@@ -874,6 +880,51 @@
 
 #btn_plat_introuvable:hover{
     color: #e1e6e4;
+}
+
+/* COMMANDER */
+.commander {
+    margin-top: 2.5%;
+    margin-left: 5%;
+}
+
+.commander h1 {
+    margin-left: 5%;
+}
+
+.commander_head {
+    display: flex;
+}
+
+.commander_head img {
+    border-radius: 50px;
+}
+
+.commander_head div {
+    flex-direction: column;
+    margin-left: 1%;
+    width: 40%;
+    color: #212226;
+}
+
+.commander_body {
+    margin-bottom: 2%;
+}
+
+.commander_body form {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    margin-top: 2.5%;
+    margin-left: 5%;
+}
+
+.commander_body input {
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid #212226;
+    font-size: 24px;
+    margin: 5px 0px 5px 0px;
 }
 
 /* CONTACT */

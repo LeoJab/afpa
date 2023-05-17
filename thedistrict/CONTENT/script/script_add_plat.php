@@ -1,11 +1,9 @@
 <?php
-$id = (isset($_GET['id']) && $_GET['id'] != "") ? $_GET['id'] : NULL;
 $libelle = (isset($_POST['libelle']) && $_POST['libelle'] != "") ? $_POST['libelle'] : NULL;
 $description = (isset($_POST['description']) && $_POST['description'] != "") ? $_POST['description'] : NULL;
 $prix = (isset($_POST['prix']) && $_POST['prix'] != "") ? $_POST['prix'] : NULL;
 $id_categorie = (isset($_POST['categorie']) && $_POST['categorie'] != "") ? $_POST['categorie'] : NULL;
 $active = (isset($_POST['active']) && $_POST['active'] != "") ? $_POST['active'] : NULL;
-$picture = $_FILES["picture"]["name"];
 
 if ($_FILES["picture"]["error"] > 0) {
     echo "Erreur !";
@@ -28,8 +26,8 @@ if ($_FILES["picture"]["error"] > 0) {
     }  
 }
 
-if($libelle == NULL || $active == NULL) {
-    header('Location: /index.php?admin=modif_plat');
+if($libelle == NULL || $description == NULL || $prix == NULL || $id_categorie == NULL || $active == NULL) {
+    header('Location: /index.php?admin=add_plat');
     exit;
 }
 
@@ -37,9 +35,8 @@ require "../../db.php";
 $db = connexionBase();
 
 try {
-    $requete = $db->prepare("UPDATE plat SET libelle = :libelle, description = :description, prix = :prix, image = :image, id_categorie = :id_categorie, active = :active where id = :id");
+    $requete = $db->prepare("INSERT INTO plat (libelle, description, prix, image, id_categorie, active) VALUES (:libelle, :description, :prix, :image, :id_categorie, :active)");
 
-    $requete->bindValue(":id", $id, PDO::PARAM_INT);
     $requete->bindValue(":libelle", $libelle, PDO::PARAM_STR);
     $requete->bindValue(":description", $description, PDO::PARAM_STR);
     $requete->bindValue(":prix", $prix, PDO::PARAM_STR);
@@ -53,7 +50,7 @@ try {
     var_dump($requete->queryString);
     var_dump($requete->errorInfo());
     echo "Erreur : " . $requete->errorInfo()[2] . "<br>";
-    die("Fin du script (script_modif_plat.php)");
+    die("Fin du script (script_add_plat.php)");
 }
 
 header("Location: /index.php?admin=plat");

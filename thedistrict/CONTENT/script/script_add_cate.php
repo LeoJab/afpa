@@ -48,5 +48,4 @@ try {
 }
 
 header("Location: /index.php?admin=categorie");
-
 exit;

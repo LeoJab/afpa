@@ -25,7 +25,7 @@
     </div>
     <div>
         <h1>Ajouter un plat</h1>
-        <form action="CONTENT/script/script_add_cate.php" method="post" enctype='multipart/form-data'>
+        <form action="CONTENT/script/script_add_plat.php" method="post" enctype='multipart/form-data'>
             <input type="text" name="libelle" placeholder="Libelle..">
             <input type="text" name="description" placeholder="Description..">
             <input type="text" name="prix" placeholder="Prix..">

@@ -9,6 +9,8 @@ if(isset($_GET['page']) && $_GET['page']=='acceuil') {
     include("CONTENT/thedistrict/categorie.php");
 } else if(isset($_GET['page']) && $_GET['page']=='plat') {
     include("CONTENT/thedistrict/plat.php");
+} else if(isset($_GET['page']) && $_GET['page']=='commander') {
+    include("CONTENT/thedistrict/commander.php");
 } else if(isset($_GET['page']) && $_GET['page']=='contact') {
     include("CONTENT/thedistrict/contact.php");
 } else if(isset($_GET['page']) && $_GET['page']=='connexion') {
