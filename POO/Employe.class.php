@@ -9,17 +9,14 @@ class Employe {
     private $service;
     private $magasin;
 
-    public function SetNewEmploye($new_nom, $new_prenom, $new_d_e, $new_fonction, int $new_salaire, $new_service) {
+    public function SetNewEmploye($new_nom, $new_prenom, $new_d_e, $new_fonction, int $new_salaire, $new_service, $new_magasin) {
         $this->nom = $new_nom;
         $this->prenom = $new_prenom;
         $this->d_e = $new_d_e;
         $this->fonction = $new_fonction;
         $this->salaire = $new_salaire;
         $this->service = $new_service;
-    }
-
-    public function SetEmployeMagasin($setMagasin) {
-        $this->magasin = $this->nom;
+        $this->magasin = $new_magasin;
     }
 
     /*public function AfficherDE() {
@@ -27,7 +24,7 @@ class Employe {
     }*/
 
     public function InformationEmploye() {
-        echo $magasin;
+        echo "<br>" . $this->nom . " " . $this->prenom . " " . $this->magasin . " " . $this->service . " " . $this->fonction . " " . $this->salaire . "k " . $this->d_e;
     }
 
     public function PrimeAnnuel() {

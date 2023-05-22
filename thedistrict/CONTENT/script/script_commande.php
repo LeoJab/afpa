@@ -19,7 +19,7 @@ require "../../db.php";
 $db = connexionBase();
 
 $requete = $db->query("SELECT * FROM plat where id = $id_plat");
-$plat = $requete3->fetchAll(PDO::FETCH_OBJ);
+$plat = $requete->fetchAll(PDO::FETCH_OBJ);
 $requete->closeCursor();
 
 try {
