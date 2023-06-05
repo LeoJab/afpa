@@ -1,5 +1,5 @@
 <?php
-require "db.php";
+include "db.php";
 $db = ConnexionBase();
 
 $requete1 = $db->query("SELECT * FROM categorie where active = 'yes' order by libelle limit 5");

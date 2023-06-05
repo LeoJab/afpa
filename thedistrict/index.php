@@ -23,6 +23,12 @@ if(isset($_GET['page']) && $_GET['page']=='acceuil') {
     include("CONTENT/admin/accueil.php");
 } else if(isset($_GET['page']) && $_GET['page']=='deconnexion') {
     include("CONTENT/script/script_deconnexion.php");
+} else if(isset($_GET['page']) && $_GET['page']=='mentions_legales') {
+    include("CONTENT/thedistrict/mentions_legales.php");
+} else if(isset($_GET['page']) && $_GET['page']=='politique') {
+    include("CONTENT/thedistrict/politique_confidentialite.php");
+} else if(isset($_GET['page']) && $_GET['page']=='cgv') {
+    include("CONTENT/thedistrict/cgv.php");
 } else
 
 // ADMIN
@@ -63,67 +69,38 @@ if(isset($_GET['page']) && $_GET['page']=='erreur_champ') {
 
 // PLATS
 if(isset($_GET['page']) && $_GET['page'] == 'Burger') {
-    include("CONTENT/thedistrict/banniere.php");
-    include("CONTENT/thedistrict/interface_plat.php");
     include('CONTENT/plat/Burger.php');
 } else if(isset($_GET['page']) && $_GET['page'] == 'Pasta') {
-    include("CONTENT/thedistrict/banniere.php");
-    include("CONTENT/thedistrict/interface_plat.php");
     include('CONTENT/plat/Pasta.php');
 } else if(isset($_GET['page']) && $_GET['page'] == 'Pizza') {
-    include("CONTENT/thedistrict/banniere.php");
-    include("CONTENT/thedistrict/interface_plat.php");
     include('CONTENT/plat/Pizza.php');
 } else if(isset($_GET['page']) && $_GET['page'] == 'Salade') {
-    include("CONTENT/thedistrict/banniere.php");
-    include("CONTENT/thedistrict/interface_plat.php");
     include('CONTENT/plat/Salade.php');
 } else if(isset($_GET['page']) && $_GET['page'] == 'Sandwich') {
-    include("CONTENT/thedistrict/banniere.php");
-    include("CONTENT/thedistrict/interface_plat.php");
     include('CONTENT/plat/Sandwich.php');
 } else if(isset($_GET['page']) && $_GET['page'] == 'Veggie') {
-    include("CONTENT/thedistrict/banniere.php");
-    include("CONTENT/thedistrict/interface_plat.php");
     include('CONTENT/plat/Veggie.php');
 } else if(isset($_GET['page']) && $_GET['page'] == 'Wraps') {
-    include("CONTENT/thedistrict/banniere.php");
-    include("CONTENT/thedistrict/interface_plat.php");
     include('CONTENT/plat/Wraps.php');
 } else 
 
 //RECHERCHE PLAT
 if(isset($_GET['recherche']) && $_GET['recherche'] == 'Burger' || $_GET['recherche'] == 'burger') {
-    include("CONTENT/thedistrict/banniere.php");
-    include("CONTENT/thedistrict/interface_plat.php");
     include('CONTENT/plat/Burger.php');
 } else if(isset($_GET['recherche']) && $_GET['recherche'] == 'Pasta' || $_GET['recherche'] == 'pasta') {
-    include("CONTENT/thedistrict/banniere.php");
-    include("CONTENT/thedistrict/interface_plat.php");
     include('CONTENT/plat/Pasta.php');
 } else if(isset($_GET['recherche']) && $_GET['recherche'] == 'Pizza' || $_GET['recherche'] == 'pizza') {
-    include("CONTENT/thedistrict/banniere.php");
-    include("CONTENT/thedistrict/interface_plat.php");
     include('CONTENT/plat/Pizza.php');
 } else if(isset($_GET['recherche']) && $_GET['recherche'] == 'Salade' || $_GET['recherche'] == 'salade') {
-    include("CONTENT/thedistrict/banniere.php");
-    include("CONTENT/thedistrict/interface_plat.php");
     include('CONTENT/plat/Salade.php');
 } else if(isset($_GET['recherche']) && $_GET['recherche'] == 'Sandwich' || $_GET['recherche'] == 'sandwich') {
-    include("CONTENT/thedistrict/banniere.php");
-    include("CONTENT/thedistrict/interface_plat.php");
     include('CONTENT/plat/Sandwich.php');
 } else if(isset($_GET['recherche']) && $_GET['recherche'] == 'Veggie' || $_GET['recherche'] == 'veggie') {
-    include("CONTENT/thedistrict/banniere.php");
-    include("CONTENT/thedistrict/interface_plat.php");
     include('CONTENT/plat/Veggie.php');
 } else if(isset($_GET['recherche']) && $_GET['recherche'] == 'Wraps' || $_GET['recherche'] == 'wraps') {
-    include("CONTENT/thedistrict/banniere.php");
-    include("CONTENT/thedistrict/interface_plat.php");
     include('CONTENT/plat/Wraps.php');
 } else {
-    include("CONTENT/thedistrict/banniere.php");
-    include("CONTENT/thedistrict/plat_introuvable.php");
+    include("CONTENT/thedistrict/acceuil.php");
 }
 ?>
 

@@ -16,6 +16,6 @@ class Magasin {
     }
 
     public function AfficherMagasin(){
-        echo "<br>" . $this->nom . " " . $this->adresse . " " . $this->cp . " " . $this->ville;
+        echo "<br>" . $this->nom . " " . $this->adresse . " " . $this->cp . " " . $this->ville . " " . $this->restaurant;
     }
 }

@@ -55,7 +55,7 @@ session_start();
 
     <div>
         <div class="none menu_nav_uti">
-            <a class="a_header compte" href="index.php?page=mon_compte">Mon compte</a>
+            <a class="a_header compte" href="index.php?page=compte">Mon compte</a>
             <?php if($_SESSION["email"] === "admin@admin.fr"){ ?>
                 <a class="a_header compte" href="index.php?page=admin">Administrateur</a>
             <?php } ?>
