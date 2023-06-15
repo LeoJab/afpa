@@ -182,7 +182,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    background-image: linear-gradient(rgba(255, 196, 83, 0.8), rgba(255, 196, 83, 0.8)), url("../../../ASSET/img/images_the_district/ibg.jpg");
+    background-image: linear-gradient(rgba(255, 196, 83, 0.8), rgba(255, 196, 83, 0.8)), url("../public/assets/img/images_the_district/ibg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     padding: 5%;

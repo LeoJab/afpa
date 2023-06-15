@@ -3,19 +3,6 @@
 {% block title %}Accueil{% endblock %}
 
 {% block body %}
-<?php
-include "db.php";
-$db = ConnexionBase();
-
-$requete1 = $db->query("SELECT * FROM categorie where active = 'yes' order by libelle limit 5");
-$MyCategorie = $requete1->fetchAll(PDO::FETCH_OBJ);
-$requete1->closeCursor();
-
-$requete2 = $db->query("SELECT * FROM plat order by id limit 4");
-$MyPlat = $requete2->fetchAll(PDO::FETCH_OBJ);
-$requete2->closeCursor();
-?>
-
 <div id="categorie_acceuil">
     <div class="titre_cate_acceuil card_cate_accueil">
         <h1>Catégories</h1>
@@ -23,23 +10,23 @@ $requete2->closeCursor();
         <a href="index.php?page=categorie">CATÉGORIES</a>
     </div>
 
-    <?php foreach($MyCategorie as $categorie): ?>
+    {% for category in categorie %}
         <a class="lien_categorie_accceuil" href="index.php?page=<?= $categorie->libelle ?>">
             <table class="table_categorie_acceuil card_cate_accueil">
                 <thead>
                     <tr>
-                        <th><img src="/ASSET/img/images_the_district/category/<?= $categorie->image ?>" alt="image_plat"></th>
+                        <th><img src="{{ asset('assets/img/images_the_district/category/burger.jpg') }}" alt="image_plat"></th>
                     </tr>
                 </thead>
                 <tbody class="tbody_cate_accueil">
                     <tr>
-                        <td class="libelle_categorie_acceuil"><?= $categorie->libelle ?></td>
+                        <td class="libelle_categorie_acceuil">{{ category.libelle }}</td>
                         <td class="barre_liebelle_accueil"></td>
                     </tr>
                 </tbody>
             </table>
         </a>
-    <?php endforeach; ?>
+    {% endfor %}
 </div>
 
 <div class="horaire">
@@ -71,23 +58,23 @@ $requete2->closeCursor();
 
 <div class="fond_plat_acc">
     <div id="plat_acceuil">
-        <?php foreach($MyPlat as $plat): ?>
+        {% for plats in plat %}
             <a class="lien_plat_acceuil" href="index.php?page=plat">
                 <table class="table_plat_acceuil card_plat_acceuil">
                     <thead>
                         <tr>
-                            <th><img class="image_plat_acceuil" src="/ASSET/img/images_the_district/food/<?= $plat->image ?>" alt="image_plat"></th>
+                            <th><img class="image_plat_acceuil" src="{{ asset('assets/img/images_the_district/food/cheesburger.jpg') }}" alt="image_plat"></th>
                         </tr>
                     </thead>
                     <tbody class="tbody_plat_acc">
                         <tr>
-                            <td class="libelle_plat_acc"><?= $plat->libelle ?></td>
+                            <td class="libelle_plat_acc">{{ plats.libelle }}</td>
                             <td class="fond_libelle"></td>
                         </tr>
                     </tbody>
                 </table>
             </a>
-        <?php endforeach; ?>
+        {% endfor %}
     </div>
 
     <div class="titre_plat_acc">
