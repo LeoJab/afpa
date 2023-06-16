@@ -51,6 +51,18 @@ class MainController extends AbstractController
         ]);
     }
 
+    #[Route('/plat/{categorie_id}', name: 'plat_categorie')]
+    public function plat_categorie($categorie_id, PlatRepository $platRepository): Response
+    {
+        $platCategorie = $platRepository->selectPlatNomCategorie($categorie_id);
+
+        return $this->render('main/plats.html.twig', [
+            'categorie.id' => $categorie_id,
+            'controller_name' => 'MainController',
+            'plats' => $platCategorie
+        ]);
+    }
+
     #[Route('/contact', name: 'contact')]
     public function contact(Request $request): Response
     {

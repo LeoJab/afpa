@@ -9,11 +9,11 @@
 
         <div id="cate_act">
             {% for categorie in categoriesActives %}
-                <a class="lien_cate_act card_cate_act" href="index.php?page=<?= $categorie->libelle ?>">
+                <a class="lien_cate_act card_cate_act" href="{{ path('plat/' ~ categorie.id) }}">
                 <table class="table_cate_act card_cate_act">
                     <thead>
                         <tr>
-                            <td><img class="image_cate_act card_cate_act" src="{{ asset('assets/img/images_the_district/category/burger.jpg') }}" alt="image_plat"></td>
+                            <td><img class="image_cate_act card_cate_act" src="{{ asset('assets/img/images_the_district/category/') ~ categorie.image }}" alt="image_plat"></td>
                         </tr>
                     </thead>
                     <tbody class="tbody_cate_act card_cate_act">
@@ -40,7 +40,7 @@
                     <table class="table_cate_no_act card_cate_act">
                         <thead>
                             <tr>
-                                <td><img class="image_cate_no_act card_cate_act" src="{{ asset('assets/img/images_the_district/category/burger.jpg') }}" alt="image_plat"></td>
+                                <td><img class="image_cate_no_act card_cate_act" src="{{ asset('assets/img/images_the_district/category/') ~ categorie.image }}" alt="image_plat"></td>
                             </tr>
                         </thead>
                         <tbody class="tbody_cate_no_act card_cate_act">

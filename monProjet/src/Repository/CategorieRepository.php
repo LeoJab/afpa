@@ -58,15 +58,6 @@ class CategorieRepository extends ServiceEntityRepository
             ->getResult();
     }
 
-    public function selectCategorieNom($nom)
-    {
-        return $this->createQueryBuilder('c')
-            ->andWhere('c.libelle like :nom')
-            ->setParameter('name', '%'.nom.'%')
-            ->getQuery()
-            ->getResult();
-    }
-
 //    /**
 //     * @return Categorie[] Returns an array of Categorie objects
 //     */

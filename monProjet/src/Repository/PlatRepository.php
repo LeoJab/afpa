@@ -57,11 +57,21 @@ class PlatRepository extends ServiceEntityRepository
             ->getResult();
     }
 
-    public function selectPlatNom($nom)
+    public function selectPlatNom($name)
     {
         return $this->createQueryBuilder('c')
-            ->andWhere('c.libelle like :nom')
-            ->setParameter('nom', '%'.$nom.'%')
+            ->andWhere('c.libelle like :name')
+            ->setParameter('name', '%'.$name.'%')
+            ->getQuery()
+            ->getResult();
+    }
+
+    public function selectPlatNomCategorie($categorie_id)
+    {
+        return $this->createQueryBuilder('d')
+            ->join('e.categories')
+            ->andWhere('d.libelle like :name')
+            ->setParameter('name', '%'.$name.'%')
             ->getQuery()
             ->getResult();
     }
