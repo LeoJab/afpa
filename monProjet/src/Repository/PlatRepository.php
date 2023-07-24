@@ -39,39 +39,12 @@ class PlatRepository extends ServiceEntityRepository
         }
     }
 
-    // === SELECT ===
-    public function selectPlatAllActive($active)
+    public function findPlat($plat_id)
     {
-        return $this->createQueryBuilder('a')
-            ->andWhere('a.active like :active')
-            ->setParameter('active', '%'.$active.'%')
-            ->getQuery()
-            ->getResult();
-    }
-
-    public function selectPlatLimit($limite)
-    {
-        return $this->createQueryBuilder('b')
-            ->setMaxResults($limite)
-            ->getQuery()
-            ->getResult();
-    }
-
-    public function selectPlatNom($name)
-    {
-        return $this->createQueryBuilder('c')
-            ->andWhere('c.libelle like :name')
-            ->setParameter('name', '%'.$name.'%')
-            ->getQuery()
-            ->getResult();
-    }
-
-    public function selectPlatNomCategorie($categorie_id)
-    {
-        return $this->createQueryBuilder('d')
-            ->join('e.categories')
-            ->andWhere('d.libelle like :name')
-            ->setParameter('name', '%'.$name.'%')
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.id like :id')
+            ->setParameter('id', $plat_id)
+            ->setMaxResults(1)
             ->getQuery()
             ->getResult();
     }

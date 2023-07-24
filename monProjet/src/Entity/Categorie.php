@@ -15,7 +15,7 @@ class Categorie
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 50)]
     private ?string $libelle = null;
 
     #[ORM\Column(length: 255)]
@@ -25,11 +25,16 @@ class Categorie
     private ?string $active = null;
 
     #[ORM\OneToMany(mappedBy: 'categorie', targetEntity: Plat::class)]
-    private Collection $plats;
+    private Collection $categorie;
 
     public function __construct()
     {
-        $this->plats = new ArrayCollection();
+        $this->categorie = new ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return $this->CategorieRepo;
     }
 
     public function getId(): ?int
@@ -74,29 +79,29 @@ class Categorie
     }
 
     /**
-     * @return Collection<int, Plat>
+     * @return Collection<int, plat>
      */
-    public function getPlats(): Collection
+    public function getCategorie(): Collection
     {
-        return $this->plats;
+        return $this->categorie;
     }
 
-    public function addPlat(Plat $plat): self
+    public function addCategorie(plat $categorie): self
     {
-        if (!$this->plats->contains($plat)) {
-            $this->plats->add($plat);
-            $plat->setCategorie($this);
+        if (!$this->categorie->contains($categorie)) {
+            $this->categorie->add($categorie);
+            $categorie->setCategorie($this);
         }
 
         return $this;
     }
 
-    public function removePlat(Plat $plat): self
+    public function removeCategorie(plat $categorie): self
     {
-        if ($this->plats->removeElement($plat)) {
+        if ($this->categorie->removeElement($categorie)) {
             // set the owning side to null (unless already changed)
-            if ($plat->getCategorie() === $this) {
-                $plat->setCategorie(null);
+            if ($categorie->getCategorie() === $this) {
+                $categorie->setCategorie(null);
             }
         }
 

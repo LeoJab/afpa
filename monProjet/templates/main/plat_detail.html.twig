@@ -1,14 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Plats{% endblock %}
+{% block title %}Detail Plat{% endblock %}
 
 {% block body %}
 <div id="fond_plat">
-    <h2 class="titre_categorie_plat">TOUS LES PLATS</h2>
-    <div id="plat">
-        {% for plat in plats %}
+    {% for plat in plats %}
+        <h2 class="titre_categorie_plat">Detail {{ plat.libelle }}</h2>
+        <div id="plat">
             <div>
-            <a href="{{ path('app_plat_detail', {plat_id : plat.id}) }}">
                 <table class="table_plat card_plat">
                     <thead>
                         <tr>
@@ -20,17 +19,16 @@
                     </thead>
                     <tbody class="plat_description">
                         <tr>
-                            <td class="desc_plat">{{ plat.description }}</td>
+                            <td class="desc_plat">{{ plat.description }}</td>  
                             <tr class="plat_prix_icon">
                                 <td><i class="fa-solid fa-cart-shopping fa-xl" style="color: #ffc453;"></i></td>
-                                <td class="prix_plat">{{ plat.prix }}€</td>
+                                <td class="prix_plat"><a href="{{ path('addPanier', {'id' : plat.id}) }}">Ajouter au Panier</a></td>
                             </tr>
                         </tr>
                     </tbody>
                 </table>
-            </a>
             </div>
-        {% endfor %}
-    </div>
+        </div>
+    {% endfor %}
 </div>
 {% endblock %}

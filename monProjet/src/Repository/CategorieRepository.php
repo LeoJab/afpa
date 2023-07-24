@@ -39,25 +39,6 @@ class CategorieRepository extends ServiceEntityRepository
         }
     }
 
-    // === SELECT ===
-    public function selectCategorieAllActive($active)
-    {
-        return $this->createQueryBuilder('a')
-            ->andWhere('a.active like :active')
-            ->setParameter('active', '%'.$active.'%')
-            ->getQuery()
-            ->getResult();
-    }
-    
-
-    public function selectCategorieLimit($limite)
-    {
-        return $this->createQueryBuilder('b')
-            ->setMaxResults($limite)
-            ->getQuery()
-            ->getResult();
-    }
-
 //    /**
 //     * @return Categorie[] Returns an array of Categorie objects
 //     */

@@ -43,30 +43,11 @@
                             <li class="bouton_header"> <a class="a_header" href="{{ path('categorie') }}">CATÉGORIES</a></li>
                             <li class="bouton_header"> <a class="a_header" href="{{ path('plat') }}">PLATS</a></li>
                             <li class="bouton_header"> <a class="a_header" href="{{ path('contact') }}">CONTACT</a></li>
+                            <li class="bouton_header"> <a class="a_header" href="{{ path('panier') }}">PANIER</a></li>
                         </ul>
                     </div>
-
-                    <?php if($_SESSION == NULL){ ?>
-                        <div id="login_register">
-                                <a class="log a_header_log connexion" href="index.php?page=connexion">CONNEXION</a>
-                                <a class="log a_header_log inscription" href="index.php?page=inscription">INSCRIPTION</a>
-                        </div>
-                    <?php } else{?>
-                        <div id="log_connecte">
-                            <button class="icon_user"><i class="fa-solid fa-user fa-xl" style="color: #000000;"></i></button>
-                        </div>
-                    <?php } ?>
                 </div>
 
-                <div>
-                    <div class="none menu_nav_uti">
-                        <a class="a_header compte" href="index.php?page=compte">Mon compte</a>
-                        <?php if($_SESSION["email"] === "admin@admin.fr"){ ?>
-                            <a class="a_header compte" href="index.php?page=admin">Administrateur</a>
-                        <?php } ?>
-                        <a class="a_header deconnexion" href="index.php?page=deconnexion">Deconnexion</a>
-                    </div>
-                </div>
             </header>
 
         {% block body %}{% endblock %}

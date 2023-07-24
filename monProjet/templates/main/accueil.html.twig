@@ -10,17 +10,17 @@
         <a href="index.php?page=categorie">CATÉGORIES</a>
     </div>
 
-    {% for category in categorie %}
-        <a class="lien_categorie_accceuil" href="index.php?page=<?= $categorie->libelle ?>">
+    {% for categorie in categories %}
+        <a class="lien_categorie_accceuil" href="{{ path('plat', {categorie_id : categorie.id}) }}">
             <table class="table_categorie_acceuil card_cate_accueil">
                 <thead>
                     <tr>
-                        <th><img src="{{ asset('assets/img/images_the_district/category/') ~ category.image }}" alt="image_plat"></th>
+                        <th><img src="{{ asset('assets/img/images_the_district/category/') ~ categorie.image }}" alt="image_plat"></th>
                     </tr>
                 </thead>
                 <tbody class="tbody_cate_accueil">
                     <tr>
-                        <td class="libelle_categorie_acceuil">{{ category.libelle }}</td>
+                        <td class="libelle_categorie_acceuil">{{ categorie.libelle }}</td>
                         <td class="barre_liebelle_accueil"></td>
                     </tr>
                 </tbody>
@@ -58,17 +58,17 @@
 
 <div class="fond_plat_acc">
     <div id="plat_acceuil">
-        {% for plats in plat %}
+        {% for plat in plats %}
             <a class="lien_plat_acceuil" href="index.php?page=plat">
                 <table class="table_plat_acceuil card_plat_acceuil">
                     <thead>
                         <tr>
-                            <th><img class="image_plat_acceuil" src="{{ asset('assets/img/images_the_district/food/') ~ plats.image }}" alt="image_plat"></th>
+                            <th><img class="image_plat_acceuil" src="{{ asset('assets/img/images_the_district/food/') ~ plat.image }}" alt="image_plat"></th>
                         </tr>
                     </thead>
                     <tbody class="tbody_plat_acc">
                         <tr>
-                            <td class="libelle_plat_acc">{{ plats.libelle }}</td>
+                            <td class="libelle_plat_acc">{{ plat.libelle }}</td>
                             <td class="fond_libelle"></td>
                         </tr>
                     </tbody>

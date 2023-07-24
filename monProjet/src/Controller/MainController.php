@@ -14,52 +14,51 @@ use App\Repository\PlatRepository;
 class MainController extends AbstractController
 {
     #[Route('/accueil', name: 'accueil')]
-    public function accueil(CategorieRepository $categorieRepository, PlatRepository $platRepository): Response
+    public function accueil(PlatRepository $platRepo, CategorieRepository $categorieRepo)
     {
 
-        $categorie = $categorieRepository->selectCategorieLimit(5);
-        $plats = $platRepository->selectPlatLimit(3);
+        $plats = $platRepo->findAll();
+        $categories = $categorieRepo->findAll();
 
         return $this->render('main/accueil.html.twig', [
             'controller_name' => 'MainController',
-            'categorie' => $categorie,
-            'plat' => $plats
+            'plats' => $plats,
+            'categories' => $categories
         ]);
     }
 
     #[Route('/categorie', name: 'categorie')]
-    public function categorie(CategorieRepository $categorieRepository): Response
+    public function categorie(CategorieRepository $categorieRepo)
     {
-        $categoriesActives = $categorieRepository->selectCategorieAllActive('yes');
-        $categoriesNoneActives = $categorieRepository->selectCategorieAllActive('no');
+        $categories = $categorieRepo->findAll();
 
         return $this->render('main/categories.html.twig', [
             'controller_name' => 'MainController',
-            'categoriesActives' => $categoriesActives,
-            'categoriesNoneActives' => $categoriesNoneActives
+            'categories' => $categories
         ]);
     }
 
     #[Route('/plat', name: 'plat')]
     public function plat(PlatRepository $platRepository): Response
     {
-        $platsActives = $platRepository->selectPlatAllActive('yes');
+        $plats = $platRepository->findAll();
 
         return $this->render('main/plats.html.twig', [
             'controller_name' => 'MainController',
-            'platsActives' => $platsActives
+            'plats' => $plats
         ]);
     }
 
     #[Route('/plat/{categorie_id}', name: 'plat_categorie')]
-    public function plat_categorie($categorie_id, PlatRepository $platRepository): Response
+    public function plat_categorie($categorie_id, Request $request): Response
     {
-        $platCategorie = $platRepository->selectPlatNomCategorie($categorie_id);
+        $categorie_id = $request->get('categorie_id');
+        $categorie = $CategorieRepository->find($categorie_id);
+        $plats = $categorie->getPlats();
 
         return $this->render('main/plats.html.twig', [
-            'categorie.id' => $categorie_id,
             'controller_name' => 'MainController',
-            'plats' => $platCategorie
+            'plats' => $plats
         ]);
     }
 

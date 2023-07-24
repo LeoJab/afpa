@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\CommandeRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -14,46 +16,43 @@ class Commande
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column]
-    private ?int $quantite = null;
+    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    private ?\DateTimeInterface $date_commande = null;
 
     #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: '0')]
     private ?string $total = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $date_commande = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $nom_client = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $telephone_client = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $email_client = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $adresse_client = null;
-
-    #[ORM\ManyToOne(inversedBy: 'commandes')]
-    private ?Plat $plat = null;
-
     #[ORM\Column(length: 255)]
     private ?string $etat = null;
+
+    #[ORM\OneToMany(mappedBy: 'details', targetEntity: Detail::class)]
+    private Collection $details;
+
+    #[ORM\ManyToOne(inversedBy: 'commandes')]
+    private ?Utilisateur $utilisateur = null;
+
+    #[ORM\OneToMany(mappedBy: 'commande', targetEntity: Detail::class)]
+    private Collection $commande;
+
+    public function __construct()
+    {
+        $this->details = new ArrayCollection();
+        $this->commande = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getQuantite(): ?int
+    public function getDateCommande(): ?\DateTimeInterface
     {
-        return $this->quantite;
+        return $this->date_commande;
     }
 
-    public function setQuantite(int $quantite): self
+    public function setDateCommande(\DateTimeInterface $date_commande): self
     {
-        $this->quantite = $quantite;
+        $this->date_commande = $date_commande;
 
         return $this;
     }
@@ -70,78 +69,6 @@ class Commande
         return $this;
     }
 
-    public function getDateCommande(): ?\DateTimeInterface
-    {
-        return $this->date_commande;
-    }
-
-    public function setDateCommande(\DateTimeInterface $date_commande): self
-    {
-        $this->date_commande = $date_commande;
-
-        return $this;
-    }
-
-    public function getNomClient(): ?string
-    {
-        return $this->nom_client;
-    }
-
-    public function setNomClient(string $nom_client): self
-    {
-        $this->nom_client = $nom_client;
-
-        return $this;
-    }
-
-    public function getTelephoneClient(): ?string
-    {
-        return $this->telephone_client;
-    }
-
-    public function setTelephoneClient(string $telephone_client): self
-    {
-        $this->telephone_client = $telephone_client;
-
-        return $this;
-    }
-
-    public function getEmailClient(): ?string
-    {
-        return $this->email_client;
-    }
-
-    public function setEmailClient(string $email_client): self
-    {
-        $this->email_client = $email_client;
-
-        return $this;
-    }
-
-    public function getAdresseClient(): ?string
-    {
-        return $this->adresse_client;
-    }
-
-    public function setAdresseClient(string $adresse_client): self
-    {
-        $this->adresse_client = $adresse_client;
-
-        return $this;
-    }
-
-    public function getPlat(): ?Plat
-    {
-        return $this->plat;
-    }
-
-    public function setPlat(?Plat $plat): self
-    {
-        $this->plat = $plat;
-
-        return $this;
-    }
-
     public function getEtat(): ?string
     {
         return $this->etat;
@@ -150,6 +77,78 @@ class Commande
     public function setEtat(string $etat): self
     {
         $this->etat = $etat;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Detail>
+     */
+    public function getDetails(): Collection
+    {
+        return $this->details;
+    }
+
+    public function addDetail(Detail $detail): self
+    {
+        if (!$this->details->contains($detail)) {
+            $this->details->add($detail);
+            $detail->setDetails($this);
+        }
+
+        return $this;
+    }
+
+    public function removeDetail(Detail $detail): self
+    {
+        if ($this->details->removeElement($detail)) {
+            // set the owning side to null (unless already changed)
+            if ($detail->getDetails() === $this) {
+                $detail->setDetails(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getUtilisateur(): ?utilisateur
+    {
+        return $this->utilisateur;
+    }
+
+    public function setUtilisateur(?utilisateur $utilisateur): self
+    {
+        $this->utilisateur = $utilisateur;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Detail>
+     */
+    public function getCommande(): Collection
+    {
+        return $this->commande;
+    }
+
+    public function addCommande(Detail $commande): self
+    {
+        if (!$this->commande->contains($commande)) {
+            $this->commande->add($commande);
+            $commande->setCommande($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommande(Detail $commande): self
+    {
+        if ($this->commande->removeElement($commande)) {
+            // set the owning side to null (unless already changed)
+            if ($commande->getCommande() === $this) {
+                $commande->setCommande(null);
+            }
+        }
 
         return $this;
     }

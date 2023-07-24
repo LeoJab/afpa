@@ -19,7 +19,7 @@ class Plat
     #[ORM\Column(length: 255)]
     private ?string $libelle = null;
 
-    #[ORM\Column(type: Types::TEXT)]
+    #[ORM\Column(length: 255)]
     private ?string $description = null;
 
     #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: '0')]
@@ -31,15 +31,17 @@ class Plat
     #[ORM\Column(length: 255)]
     private ?string $active = null;
 
-    #[ORM\ManyToOne(inversedBy: 'plats')]
+    #[ORM\ManyToOne(inversedBy: 'categorie')]
     private ?Categorie $categorie = null;
-
-    #[ORM\OneToMany(mappedBy: 'plat', targetEntity: Commande::class)]
-    private Collection $commandes;
 
     public function __construct()
     {
-        $this->commandes = new ArrayCollection();
+        $this->plat = new ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return $this->libelle;
     }
 
     public function getId(): ?int
@@ -107,6 +109,18 @@ class Plat
         return $this;
     }
 
+    public function getPlats(): ?categorie
+    {
+        return $this->plats;
+    }
+
+    public function setPlats(?categorie $plats): self
+    {
+        $this->plats = $plats;
+
+        return $this;
+    }
+
     public function getCategorie(): ?Categorie
     {
         return $this->categorie;
@@ -119,33 +133,4 @@ class Plat
         return $this;
     }
 
-    /**
-     * @return Collection<int, Commande>
-     */
-    public function getCommandes(): Collection
-    {
-        return $this->commandes;
-    }
-
-    public function addCommande(Commande $commande): self
-    {
-        if (!$this->commandes->contains($commande)) {
-            $this->commandes->add($commande);
-            $commande->setPlat($this);
-        }
-
-        return $this;
-    }
-
-    public function removeCommande(Commande $commande): self
-    {
-        if ($this->commandes->removeElement($commande)) {
-            // set the owning side to null (unless already changed)
-            if ($commande->getPlat() === $this) {
-                $commande->setPlat(null);
-            }
-        }
-
-        return $this;
-    }
 }
