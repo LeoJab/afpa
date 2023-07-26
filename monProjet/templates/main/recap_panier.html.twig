@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Confirmation Commande{% endblock %}
+
+{% block body %}
+    <h1>Votre commande:</h1>
+
+    {% if plats | length > 0 %}
+        <table class="table w-75">
+            <thead>
+                <tr>
+                    <td></td>
+                    <td>Plat</td>
+                    <td>Prix</td>
+                    <td>Quatité</td>
+                    <td>Total</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for plat in plats %}
+                    <tr>
+                        <td><img class="w-25" src="{{ asset('assets/img/images_the_district/food/') ~ plat.product.image }}" alt="{{ plat.product.libelle }}"></td>
+                        <td>{{ plat.product.libelle }}</td>
+                        <td>{{ plat.product.prix }}€</td>
+                        <td>{{ plat.quantity }}</td>
+                        <td>{{ plat.product.prix * plat.quantity }}€</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="text-center">Total : {{ total }}€</td>
+                </tr>
+            </tfoot>
+        </table>
+        <a class="btn btn-success" href="{{ path('email') }}">Confirmer ma commande</a>
+        <a class="text-dark" href="{{ path('panier') }}">Retour au panier</a>
+    {% else %}
+        <p>Votre panier est vide.</p>
+        <a class="btn btn-success" href="{{ path('plat') }}">Retour au plats</a>
+    {% endif %}
+{% endblock %}
